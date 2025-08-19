@@ -119,12 +119,12 @@ export default function LandingSlide({ slideObject, onCTA }: LandingSlideProps) 
                 <div key={link.href} className="flex items-center">
                   <Link
                     to={link.href}
-                    className="text-gray-500 text-center font-roboto text-xs leading-4 underline hover:text-gray-700"
+                    className="text-gray-500 text-center font-roboto text-[10px] leading-4 underline hover:text-gray-700"
                   >
                     {link.label}
                   </Link>
                   {index < data.branding.footerLinks.length - 1 && (
-                    <span className="text-gray-500 mx-2 font-roboto text-xs">|</span>
+                    <span className="text-gray-500 mx-2 font-roboto text-[10px]">|</span>
                   )}
                 </div>
               ))}
