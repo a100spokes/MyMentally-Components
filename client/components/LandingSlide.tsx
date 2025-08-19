@@ -88,7 +88,7 @@ export default function LandingSlide({ slideObject, onCTA }: LandingSlideProps) 
         </div>
 
         {/* Footer */}
-        <div className="flex flex-col items-start gap-2 w-full">
+        <div className="flex flex-col items-start gap-2 w-full pt-7">
           {/* Brand */}
           <div className="flex justify-center items-center w-full">
             <div className="flex items-center pr-2">
