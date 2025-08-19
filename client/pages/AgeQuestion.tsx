@@ -75,8 +75,8 @@ export default function AgeQuestion() {
   };
 
   return (
-    <ScreenQuestion2 
-      slideObject={sampleAgeQuestionSlideObject} 
+    <ScreenQuestion2
+      slideObject={sampleAgeQuestionSlideObject}
       onAnswer={handleAnswer}
       onBack={handleBack}
     />

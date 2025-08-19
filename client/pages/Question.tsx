@@ -26,10 +26,10 @@ const sampleQuestionSlideObject = {
     },
   ],
   section: {
-    name: 'About You',
+    name: "About You",
     number: 1,
     progressPercent: 0,
-  }
+  },
 };
 
 export default function Question() {
@@ -46,8 +46,8 @@ export default function Question() {
   };
 
   return (
-    <QuestionSlide 
-      slideObject={sampleQuestionSlideObject} 
+    <QuestionSlide
+      slideObject={sampleQuestionSlideObject}
       onAnswer={handleAnswer}
       onBack={handleBack}
     />
