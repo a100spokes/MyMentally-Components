@@ -6,7 +6,7 @@ const sampleAgeQuestionSlideObject = {
   type: "radio",
   template: "ScreenQuestion2",
   data: {
-    title: "How old are you?",
+    title: "Select your age",
   },
   options: [
     {
