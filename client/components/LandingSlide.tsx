@@ -77,10 +77,10 @@ export default function LandingSlide({ slideObject, onCTA }: LandingSlideProps) 
           </div>
 
           {/* CTA Button */}
-          <div className="flex flex-col items-start max-w-96 pt-10">
+          <div className="flex flex-col items-start max-w-96 min-h-[100px] pt-10 w-full">
             <button
               onClick={handleCTAClick}
-              className="w-full bg-[#50AEFF] hover:bg-[#3B9AEF] transition-colors duration-200 text-white text-center font-roboto font-bold text-lg leading-7 py-4 px-32 rounded-full shadow-lg"
+              className="w-full bg-[#50AEFF] hover:bg-[#3B9AEF] transition-colors duration-200 text-white text-center font-roboto font-bold text-lg leading-7 py-4 px-4 rounded-full shadow-lg"
             >
               {data.ctaText}
             </button>
