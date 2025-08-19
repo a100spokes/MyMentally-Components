@@ -1,62 +1,36 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import LandingSlide from "@/components/LandingSlide";
+
+const sampleSlideObject = {
+  id: "ln-landing",
+  type: "landing",
+  template: "LandingSlide",
+  data: {
+    heroImage: "https://cdn.builder.io/api/v1/image/assets%2F06a9b9239e4142ec8519ebfeb96a4bb3%2F1283301ecddd4e73bb0b5309d3ba4b8e?format=webp&width=800",
+    heroImageAlt: "ADHD Self-Check",
+    title: "ADHD Self-Check",
+    description: "Discover your ADHD score and get guidance to move forward with clarity and confidence",
+    ctaText: "Take Test",
+    branding: {
+      name: "MyMentally",
+      logo: "https://api.builder.io/api/v1/image/assets/TEMP/bba2db1e027674db665a4dd4ff4b77caa9725f91?width=48",
+      copyright: "2025 © All Rights Reserved.",
+      footerLinks: [
+        { label: "Terms of Service", href: "/service" },
+        { label: "Privacy Policy", href: "/privacy" },
+        { label: "Subscription Terms", href: "/terms" },
+        { label: "Cookie Policy", href: "/cookie" },
+      ]
+    }
+  }
+};
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
-
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
+  const handleCTA = () => {
+    // Handle the CTA click - navigate to test or next slide
+    console.log("CTA clicked - Take Test");
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-            />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
-    </div>
+    <LandingSlide slideObject={sampleSlideObject} onCTA={handleCTA} />
   );
 }
