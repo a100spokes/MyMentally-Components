@@ -26,9 +26,11 @@ const sampleSlideObject = {
 };
 
 export default function Index() {
+  const navigate = useNavigate();
+
   const handleCTA = () => {
-    // Handle the CTA click - navigate to test or next slide
-    console.log("CTA clicked - Take Test");
+    // Navigate to the first question
+    navigate("/question");
   };
 
   return (
