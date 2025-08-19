@@ -39,7 +39,7 @@ export default function ScreenQuestion2({ slideObject, onAnswer, onBack }: Scree
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gradient-to-b from-indigo-50 to-purple-100 p-6">
+    <div className="h-screen flex flex-col items-center bg-gradient-to-b from-indigo-50 to-purple-100 p-6">
       <div className="flex flex-col items-center gap-12 w-full max-w-md">
         {/* Header */}
         <div className="flex flex-col items-center gap-4 w-full">
