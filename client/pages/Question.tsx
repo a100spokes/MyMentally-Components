@@ -37,8 +37,8 @@ export default function Question() {
 
   const handleAnswer = (selectedOption: string) => {
     console.log("Selected option:", selectedOption);
-    // Here you would typically save the answer and navigate to next question
-    // For now, just log the selection
+    // Navigate to age question after selecting gender
+    navigate("/age-question");
   };
 
   const handleBack = () => {
