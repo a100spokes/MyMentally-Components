@@ -99,7 +99,7 @@ export default function LandingSlide({ slideObject, onCTA }: LandingSlideProps) 
               />
             </div>
             <div className="flex flex-col items-center">
-              <span className="text-gray-600 text-center font-bold text-lg leading-7">
+              <span className="text-gray-600 text-center font-roboto font-semibold text-lg leading-7">
                 {data.branding.name}
               </span>
             </div>
@@ -107,7 +107,7 @@ export default function LandingSlide({ slideObject, onCTA }: LandingSlideProps) 
 
           {/* Copyright */}
           <div className="flex flex-col items-center w-full">
-            <p className="w-full text-gray-500 text-center text-xs leading-4">
+            <p className="w-full text-gray-500 text-center font-roboto text-xs leading-4">
               {data.branding.copyright}
             </p>
           </div>
@@ -119,12 +119,12 @@ export default function LandingSlide({ slideObject, onCTA }: LandingSlideProps) 
                 <div key={link.href} className="flex items-center">
                   <Link
                     to={link.href}
-                    className="text-gray-500 text-center text-xs leading-4 underline hover:text-gray-700"
+                    className="text-gray-500 text-center font-roboto text-xs leading-4 underline hover:text-gray-700"
                   >
                     {link.label}
                   </Link>
                   {index < data.branding.footerLinks.length - 1 && (
-                    <span className="text-gray-500 mx-2 text-xs">|</span>
+                    <span className="text-gray-500 mx-2 font-roboto text-xs">|</span>
                   )}
                 </div>
               ))}
