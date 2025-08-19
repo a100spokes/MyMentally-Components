@@ -27,7 +27,10 @@ interface LandingSlideProps {
   onCTA?: () => void;
 }
 
-export default function LandingSlide({ slideObject, onCTA }: LandingSlideProps) {
+export default function LandingSlide({
+  slideObject,
+  onCTA,
+}: LandingSlideProps) {
   const { data } = slideObject;
 
   const handleCTAClick = () => {
@@ -124,7 +127,9 @@ export default function LandingSlide({ slideObject, onCTA }: LandingSlideProps) 
                     {link.label}
                   </Link>
                   {index < data.branding.footerLinks.length - 1 && (
-                    <span className="text-gray-500 mx-2 font-roboto text-[10px]">|</span>
+                    <span className="text-gray-500 mx-2 font-roboto text-[10px]">
+                      |
+                    </span>
                   )}
                 </div>
               ))}
