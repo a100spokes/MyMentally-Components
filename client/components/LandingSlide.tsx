@@ -63,7 +63,7 @@ export default function LandingSlide({ slideObject, onCTA }: LandingSlideProps) 
           {/* Title */}
           <div className="flex flex-col items-start pb-4">
             <div className="flex flex-col items-center">
-              <h1 className="text-gray-800 text-center font-bold text-3xl leading-9">
+              <h1 className="text-gray-800 text-center font-roboto font-bold text-3xl leading-9">
                 {data.title}
               </h1>
             </div>
@@ -71,7 +71,7 @@ export default function LandingSlide({ slideObject, onCTA }: LandingSlideProps) 
 
           {/* Description */}
           <div className="flex flex-col items-center max-w-96 px-1">
-            <p className="text-gray-600 text-center text-base leading-6">
+            <p className="text-gray-600 text-center font-roboto text-base leading-6">
               {data.description}
             </p>
           </div>
@@ -80,7 +80,7 @@ export default function LandingSlide({ slideObject, onCTA }: LandingSlideProps) 
           <div className="flex flex-col items-start max-w-96 pt-10">
             <button
               onClick={handleCTAClick}
-              className="w-full bg-blue-400 hover:bg-blue-500 transition-colors duration-200 text-white text-center font-bold text-lg leading-7 py-4 px-32 rounded-full shadow-lg"
+              className="w-full bg-[#50AEFF] hover:bg-[#3B9AEF] transition-colors duration-200 text-white text-center font-roboto font-bold text-lg leading-7 py-4 px-32 rounded-full shadow-lg"
             >
               {data.ctaText}
             </button>
