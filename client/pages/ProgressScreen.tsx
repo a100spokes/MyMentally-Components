@@ -13,7 +13,7 @@ const sampleProgressSlideObject = {
     description:
       "Over 96,5% users manage ADHD more easily with our personalized plans",
     progressText: "Preparing tailored content",
-    progressTime: 1500, // 1500ms
+    progressTime: 3500, // 1500ms
   },
 };
 
