@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Question from "./pages/Question";
 import AgeQuestion from "./pages/AgeQuestion";
 import InfoScreen from "./pages/InfoScreen";
+import ProgressScreen from "./pages/ProgressScreen";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
