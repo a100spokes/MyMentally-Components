@@ -8,9 +8,11 @@ const sampleInfoSlideObject = {
   data: {
     buttonText: "Next",
   },
-  image: "https://api.builder.io/api/v1/image/assets/TEMP/2dd7772704196a96fc3fe1bd2e42ef09ec6116a0?width=656",
+  image:
+    "https://api.builder.io/api/v1/image/assets/TEMP/2dd7772704196a96fc3fe1bd2e42ef09ec6116a0?width=656",
   title: "Did You Know?",
-  description: "Many women are misdiagnosed or overlooked because most ADHD research has focused on men.",
+  description:
+    "Many women are misdiagnosed or overlooked because most ADHD research has focused on men.",
 };
 
 export default function InfoScreen() {
@@ -24,9 +26,6 @@ export default function InfoScreen() {
   };
 
   return (
-    <ScreenInfo 
-      slideObject={sampleInfoSlideObject} 
-      onAnswer={handleNext}
-    />
+    <ScreenInfo slideObject={sampleInfoSlideObject} onAnswer={handleNext} />
   );
 }
