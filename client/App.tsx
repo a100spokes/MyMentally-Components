@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Question from "./pages/Question";
 import AgeQuestion from "./pages/AgeQuestion";
+import InfoScreen from "./pages/InfoScreen";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
