@@ -6,7 +6,7 @@ const sampleInfoSlideObject = {
   type: "info",
   template: "ScreenInfo",
   data: {
-    onNext: "Next",
+    buttonText: "Next",
   },
   image: "https://api.builder.io/api/v1/image/assets/TEMP/2dd7772704196a96fc3fe1bd2e42ef09ec6116a0?width=656",
   title: "Did You Know?",
