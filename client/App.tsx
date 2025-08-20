@@ -24,7 +24,7 @@ export default function App() {
             <Route path="/" element={<Index />} />
             <Route path="/question" element={<Question />} />
             <Route path="/age-question" element={<AgeQuestion />} />
-            <Route path="/info" element={<InfoScreen />} />
+            <Route path="/InfoScreen" element={<InfoScreen />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
