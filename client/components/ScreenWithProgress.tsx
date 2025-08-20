@@ -19,7 +19,10 @@ interface ScreenWithProgressProps {
   onAnswer?: () => void;
 }
 
-export default function ScreenWithProgress({ slideObject, onAnswer }: ScreenWithProgressProps) {
+export default function ScreenWithProgress({
+  slideObject,
+  onAnswer,
+}: ScreenWithProgressProps) {
   const { data } = slideObject;
   const [progress, setProgress] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
@@ -29,11 +32,11 @@ export default function ScreenWithProgress({ slideObject, onAnswer }: ScreenWith
     const startDelay = setTimeout(() => {
       // Non-linear progress with pauses
       const progressSteps = [
-        { percent: 20, delay: 300 },    // First chunk: 20% in 300ms
-        { percent: 25, delay: 200 },    // Pause: stay at 25% for 200ms
-        { percent: 60, delay: 500 },    // Second chunk: 60% in 500ms
-        { percent: 65, delay: 300 },    // Pause: stay at 65% for 300ms
-        { percent: 100, delay: 200 },   // Final chunk: 100% in 200ms
+        { percent: 20, delay: 300 }, // First chunk: 20% in 300ms
+        { percent: 25, delay: 200 }, // Pause: stay at 25% for 200ms
+        { percent: 60, delay: 500 }, // Second chunk: 60% in 500ms
+        { percent: 65, delay: 300 }, // Pause: stay at 65% for 300ms
+        { percent: 100, delay: 200 }, // Final chunk: 100% in 200ms
       ];
 
       let currentStep = 0;
@@ -57,11 +60,11 @@ export default function ScreenWithProgress({ slideObject, onAnswer }: ScreenWith
         const animate = () => {
           const elapsed = Date.now() - startTime;
           const progressRatio = Math.min(elapsed / stepDuration, 1);
-          
+
           // Use easeOutQuart for smooth animation
           const easeOutQuart = 1 - Math.pow(1 - progressRatio, 4);
-          const newProgress = startProgress + (progressDiff * easeOutQuart);
-          
+          const newProgress = startProgress + progressDiff * easeOutQuart;
+
           setProgress(Math.round(newProgress));
 
           if (progressRatio < 1) {
@@ -69,7 +72,7 @@ export default function ScreenWithProgress({ slideObject, onAnswer }: ScreenWith
           } else {
             currentProgress = targetPercent;
             currentStep++;
-            
+
             // Move to next step after a brief delay
             setTimeout(runNextStep, 50);
           }
@@ -140,7 +143,7 @@ export default function ScreenWithProgress({ slideObject, onAnswer }: ScreenWith
 
             {/* Progress Bar */}
             <div className="flex items-center w-full h-2.5 rounded-full bg-gray-200 relative">
-              <div 
+              <div
                 className="h-2.5 bg-blue-400 rounded-full transition-all duration-100 ease-out"
                 style={{ width: `${progress}%` }}
               />
