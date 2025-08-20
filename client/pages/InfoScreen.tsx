@@ -19,10 +19,9 @@ export default function InfoScreen() {
   const navigate = useNavigate();
 
   const handleNext = () => {
-    console.log("Next clicked - moving to next screen");
-    // Here you would typically navigate to the next screen in the funnel
-    // For now, just log the action
-    // navigate("/next-screen");
+    console.log("Next clicked - moving to progress screen");
+    // Navigate to progress screen
+    navigate("/progress");
   };
 
   return (
