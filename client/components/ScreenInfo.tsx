@@ -25,7 +25,7 @@ export default function ScreenInfo({ slideObject, onAnswer }: ScreenInfoProps) {
   };
 
   return (
-    <div className="h-screen flex flex-col items-center bg-gradient-to-t from-blue-50 to-white">
+    <div className="h-screen flex flex-col items-center justify-start bg-gradient-to-t from-blue-50 to-white">
       <div className="flex flex-col justify-center items-center flex-1 w-full max-w-md">
         {/* Image Container */}
         <div className="flex justify-center items-center flex-1 w-full">
@@ -37,7 +37,7 @@ export default function ScreenInfo({ slideObject, onAnswer }: ScreenInfoProps) {
         </div>
 
         {/* Content Container */}
-        <div className="flex flex-col items-start gap-4 w-full h-77 p-8 bg-white rounded-t-3xl">
+        <div className="flex flex-col items-start gap-4 w-full h-77 p-8 rounded-t-3xl">
           {/* Title */}
           <div className="flex flex-col items-center w-full">
             <h1 className="w-full text-gray-800 text-center font-roboto text-3xl font-bold leading-9">
