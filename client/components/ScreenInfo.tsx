@@ -3,7 +3,7 @@ interface SlideObject {
   type: string;
   template: string;
   data: {
-    onNext: string;
+    buttonText: string;
   };
   image: string;
   title: string;
@@ -58,7 +58,7 @@ export default function ScreenInfo({ slideObject, onAnswer }: ScreenInfoProps) {
             className="flex justify-center items-center w-full py-4 px-4 rounded-full bg-blue-400 hover:bg-blue-500 transition-colors duration-200 shadow-lg"
           >
             <span className="flex-1 text-white text-center font-roboto text-lg font-bold leading-7">
-              {data.onNext}
+              {data.buttonText}
             </span>
           </button>
         </div>
