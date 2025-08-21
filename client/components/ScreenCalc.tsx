@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { QuizHeader } from "./QuizHeader";
 import { QuizPopup } from "./QuizPopup";
 import useEmblaCarousel from "embla-carousel-react";
