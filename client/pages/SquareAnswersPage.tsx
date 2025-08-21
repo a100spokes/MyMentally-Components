@@ -12,19 +12,19 @@ const sampleSquareAnswersSlideObject = {
   options: [
     {
       id: "square_sad",
-      image: "https://cdn.builder.io/api/v1/image/assets%2F06a9b9239e4142ec8519ebfeb96a4bb3%2Ff87cb3a89a51415f8bce54bfc3951bac?format=webp&width=64", // placeholder for sad emoji
+      image: "https://", // SVG will be embedded directly in component
     },
     {
       id: "square_flushed",
-      image: "https://cdn.builder.io/api/v1/image/assets%2F06a9b9239e4142ec8519ebfeb96a4bb3%2Ff87cb3a89a51415f8bce54bfc3951bac?format=webp&width=64", // placeholder for flushed emoji
+      image: "https://", // SVG will be embedded directly in component
     },
     {
       id: "square_smile",
-      image: "https://cdn.builder.io/api/v1/image/assets%2F06a9b9239e4142ec8519ebfeb96a4bb3%2Ff87cb3a89a51415f8bce54bfc3951bac?format=webp&width=64", // placeholder for smile emoji
+      image: "https://", // SVG will be embedded directly in component
     },
     {
       id: "square_smirking",
-      image: "https://cdn.builder.io/api/v1/image/assets%2F06a9b9239e4142ec8519ebfeb96a4bb3%2Ff87cb3a89a51415f8bce54bfc3951bac?format=webp&width=64", // placeholder for smirking emoji
+      image: "https://", // SVG will be embedded directly in component
     },
   ],
 };
