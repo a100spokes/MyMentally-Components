@@ -24,14 +24,18 @@ interface MultiQuestionSlideProps {
   onBack?: () => void;
 }
 
-export default function MultiQuestionSlide({ slideObject, onAnswer, onBack }: MultiQuestionSlideProps) {
+export default function MultiQuestionSlide({
+  slideObject,
+  onAnswer,
+  onBack,
+}: MultiQuestionSlideProps) {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const { data, options } = slideObject;
 
   const handleOptionToggle = (optionId: string) => {
-    setSelectedOptions(prev => {
+    setSelectedOptions((prev) => {
       const newSelection = prev.includes(optionId)
-        ? prev.filter(id => id !== optionId)
+        ? prev.filter((id) => id !== optionId)
         : [...prev, optionId];
       return newSelection;
     });
@@ -52,8 +56,14 @@ export default function MultiQuestionSlide({ slideObject, onAnswer, onBack }: Mu
   const isSelected = (optionId: string) => selectedOptions.includes(optionId);
 
   return (
-    <div className="h-screen flex flex-col flex-grow-0" style={{ backgroundColor: '#EEF2FF' }}>
-      <div className="flex flex-col flex-1 p-6 pb-0" style={{ backgroundColor: '#EEF2FF' }}>
+    <div
+      className="h-screen flex flex-col flex-grow-0"
+      style={{ backgroundColor: "#EEF2FF" }}
+    >
+      <div
+        className="flex flex-col flex-1 p-6 pb-0"
+        style={{ backgroundColor: "#EEF2FF" }}
+      >
         <div className="w-full max-w-md mx-auto flex flex-col h-full">
           {/* Header */}
           <div className="flex flex-col items-start w-full pb-12">
@@ -110,8 +120,19 @@ export default function MultiQuestionSlide({ slideObject, onAnswer, onBack }: Mu
                     <div className="flex w-full items-center h-5">
                       {/* First step completed */}
                       <div className="w-5 h-5 rounded-full bg-indigo-500 border-2 border-indigo-500 flex items-center justify-center">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M11.375 3.5L5.25 10.5L2.625 7.875" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.375 3.5L5.25 10.5L2.625 7.875"
+                            stroke="white"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
                         </svg>
                       </div>
                       <div className="h-0.5 w-11 bg-indigo-500"></div>
@@ -145,22 +166,22 @@ export default function MultiQuestionSlide({ slideObject, onAnswer, onBack }: Mu
                   key={option.id}
                   onClick={() => handleOptionToggle(option.id)}
                   className={`flex justify-between items-center p-4 rounded-xl w-full transition-all duration-200 shadow-sm ${
-                    isSelected(option.id)
-                      ? 'shadow-lg'
-                      : 'hover:opacity-80'
+                    isSelected(option.id) ? "shadow-lg" : "hover:opacity-80"
                   }`}
                   style={{
-                    backgroundColor: isSelected(option.id) ? '#5D88FF' : '#D6E1FF'
+                    backgroundColor: isSelected(option.id)
+                      ? "#5D88FF"
+                      : "#D6E1FF",
                   }}
                 >
                   {/* Content */}
                   <div className="flex items-center">
                     <div className="flex items-start pr-4">
-                      <div className={`flex p-2 rounded-lg ${
-                        isSelected(option.id)
-                          ? 'bg-white/30'
-                          : 'bg-gray-100'
-                      }`}>
+                      <div
+                        className={`flex p-2 rounded-lg ${
+                          isSelected(option.id) ? "bg-white/30" : "bg-gray-100"
+                        }`}
+                      >
                         <img
                           src={option.image}
                           alt=""
@@ -169,24 +190,30 @@ export default function MultiQuestionSlide({ slideObject, onAnswer, onBack }: Mu
                       </div>
                     </div>
                     <div className="flex flex-col items-start flex-1">
-                      <span className={`font-roboto text-base leading-6 text-left ${
-                        isSelected(option.id)
-                          ? 'text-indigo-100'
-                          : 'text-slate-800'
-                      }`}>
+                      <span
+                        className={`font-roboto text-base leading-6 text-left ${
+                          isSelected(option.id)
+                            ? "text-indigo-100"
+                            : "text-slate-800"
+                        }`}
+                      >
                         {option.title}
                       </span>
                     </div>
                   </div>
 
                   {/* Checkbox */}
-                  <div className={`w-6 h-6 rounded-md border-2 flex items-center justify-center ${
-                    isSelected(option.id)
-                      ? 'bg-indigo-100 border-indigo-100'
-                      : 'bg-white border-gray-300'
-                  }`}>
+                  <div
+                    className={`w-6 h-6 rounded-md border-2 flex items-center justify-center ${
+                      isSelected(option.id)
+                        ? "bg-indigo-100 border-indigo-100"
+                        : "bg-white border-gray-300"
+                    }`}
+                  >
                     {isSelected(option.id) && (
-                      <span className="text-indigo-500 text-2xl leading-6">✓</span>
+                      <span className="text-indigo-500 text-2xl leading-6">
+                        ✓
+                      </span>
                     )}
                   </div>
                 </button>
@@ -204,11 +231,11 @@ export default function MultiQuestionSlide({ slideObject, onAnswer, onBack }: Mu
             disabled={selectedOptions.length === 0}
             className={`flex justify-center items-center w-full py-4 rounded-full transition-all duration-200 shadow-lg ${
               selectedOptions.length === 0
-                ? 'cursor-not-allowed'
-                : 'hover:opacity-90'
+                ? "cursor-not-allowed"
+                : "hover:opacity-90"
             }`}
             style={{
-              backgroundColor:'#50AEFF'
+              backgroundColor: "#50AEFF",
             }}
           >
             <span className="flex-1 text-white text-center font-roboto text-base font-bold leading-6">
