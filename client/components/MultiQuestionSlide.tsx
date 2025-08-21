@@ -52,7 +52,7 @@ export default function MultiQuestionSlide({ slideObject, onAnswer, onBack }: Mu
   const isSelected = (optionId: string) => selectedOptions.includes(optionId);
 
   return (
-    <div className="h-screen flex flex-col items-center p-6" style={{ backgroundColor: '#EEF2FF' }}>
+    <div className="h-auto flex flex-col items-center p-6 flex-grow-0" style={{ backgroundColor: '#EEF2FF' }}>
       <div className="flex flex-col w-full max-w-md h-full">
         {/* Header */}
         <div className="flex flex-col items-start w-full pb-12">
