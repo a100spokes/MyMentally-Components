@@ -50,6 +50,9 @@ export default function SquareAnswers({
       className="h-screen flex flex-col items-center p-6 gap-3"
       style={{
         background: "linear-gradient(180deg, #F0F2FF 0%, #E8E8F5 100%)",
+        "@media (max-width: 640px)": {
+          height: "100vh",
+        },
       }}
     >
       <div className="flex flex-col items-center gap-12 w-full max-w-md h-full">
