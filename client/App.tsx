@@ -35,6 +35,8 @@ export default function App() {
             <Route path="/SquareAnswersPage" element={<SquareAnswersPage />} />
             <Route path="/ScreenReviews" element={<ScreenReviewsPage />} />
             <Route path="/ScreenReviewsPage" element={<ScreenReviewsPage />} />
+            <Route path="/ScreenStats" element={<ScreenStatsPage />} />
+            <Route path="/ScreenStatsPage" element={<ScreenStatsPage />} />
             <Route path="/progress" element={<ProgressScreen />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
