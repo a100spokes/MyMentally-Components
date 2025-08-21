@@ -10,6 +10,7 @@ import Question from "./pages/Question";
 import AgeQuestion from "./pages/AgeQuestion";
 import InfoScreen from "./pages/InfoScreen";
 import MultiQuestion from "./pages/MultiQuestion";
+import SquareAnswersPage from "./pages/SquareAnswersPage";
 import ProgressScreen from "./pages/ProgressScreen";
 import NotFound from "./pages/NotFound";
 
