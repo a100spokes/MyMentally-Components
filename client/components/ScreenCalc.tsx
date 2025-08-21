@@ -269,7 +269,7 @@ export default function ScreenCalc({
                     {reviews.map((review, index) => (
                       <div
                         key={review.id}
-                        className="flex-shrink-0 w-full pl-4 pr-4 first:pl-0 last:pr-0"
+                        className="flex-shrink-0 w-full pl-4 pr-4 
                       >
                         <div className="bg-white rounded-2xl p-6 shadow-lg min-h-[209px] flex flex-col justify-between">
                           {/* Rating */}
