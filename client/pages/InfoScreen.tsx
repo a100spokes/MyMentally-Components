@@ -21,7 +21,7 @@ export default function InfoScreen() {
   const handleNext = () => {
     console.log("Next clicked - moving to multi-question screen");
     // Navigate to multi-question screen
-    navigate("/multi-question");
+    navigate("/MultiQuestion");
   };
 
   return (
