@@ -197,7 +197,7 @@ export default function MultiQuestionSlide({ slideObject, onAnswer, onBack }: Mu
       </div>
 
       {/* Fixed Footer Button */}
-      <div className="fixed bottom-0 left-0 right-0 p-6" style={{ backgroundColor: '#EEF2FF' }}>
+      <div className="fixed bottom-0 left-0 right-0 p-6">
         <div className="w-full max-w-md mx-auto">
           <button
             onClick={handleNextClick}
