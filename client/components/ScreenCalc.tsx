@@ -267,7 +267,7 @@ export default function ScreenCalc({
 
   return (
     <div
-      className="flex flex-col"
+      className="flex flex-col overflow-x-hidden"
       style={{
         backgroundColor: "#ebecf9",
         font: '400 16px/24px Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
@@ -277,7 +277,7 @@ export default function ScreenCalc({
       }}
     >
       <div
-        className="flex flex-col justify-start items-center mx-auto"
+        className="flex flex-col justify-start items-center mx-auto w-full overflow-x-hidden"
         style={{
           "@media (max-width: 640px)": {
             maxWidth: "720px",
@@ -287,7 +287,7 @@ export default function ScreenCalc({
         }}
       >
         <div
-          className="flex items-start justify-center p-6 gap-4"
+          className="flex items-start justify-center p-6 gap-4 w-full overflow-x-hidden"
           style={{
             background: "linear-gradient(180deg, #F0F2FF 0%, #E8E8F5 100%)",
             height: "100vh",
@@ -295,7 +295,7 @@ export default function ScreenCalc({
             maxWidth: "720px",
           }}
         >
-          <div className="flex flex-col items-center max-w-md w-full gap-6 mx-auto p-6">
+          <div className="flex flex-col items-center max-w-md w-full gap-6 mx-auto p-6 overflow-x-hidden">
             {/* Main Content */}
             <div className="flex-1 flex flex-col justify-center items-center w-full gap-6">
               {/* Title */}
@@ -348,7 +348,7 @@ export default function ScreenCalc({
                     {reviews.map((review, index) => (
                       <div
                         key={review.id}
-                        className="flex-shrink-0 w-full pl-4 pr-4"
+                        className="flex-shrink-0 w-full px-2"
                       >
                         <div className="bg-white rounded-2xl p-6 shadow-lg min-h-[209px] flex flex-col justify-between">
                           {/* Rating */}
