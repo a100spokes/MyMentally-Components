@@ -32,6 +32,7 @@ export default function App() {
             <Route path="/MultiQuestion" element={<MultiQuestion />} />
             <Route path="/SquareAnswers" element={<SquareAnswersPage />} />
             <Route path="/SquareAnswersPage" element={<SquareAnswersPage />} />
+            <Route path="/ScreenReviews" element={<ScreenReviewsPage />} />
             <Route path="/progress" element={<ProgressScreen />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
