@@ -35,9 +35,8 @@ export default function SquareAnswersPage() {
 
   const handleAnswer = (selectedOption: string) => {
     console.log("Selected emotion option:", selectedOption);
-    // Here you would typically save the answer and navigate to next screen
-    // For now, just log the selection
-    // navigate("/next-screen");
+    // Navigate to the ScreenReviews component
+    navigate("/ScreenReviews");
   };
 
   const handleBack = () => {
