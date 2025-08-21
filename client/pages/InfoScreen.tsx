@@ -19,9 +19,9 @@ export default function InfoScreen() {
   const navigate = useNavigate();
 
   const handleNext = () => {
-    console.log("Next clicked - moving to progress screen");
-    // Navigate to progress screen
-    navigate("/progress");
+    console.log("Next clicked - moving to multi-question screen");
+    // Navigate to multi-question screen
+    navigate("/multi-question");
   };
 
   return (
