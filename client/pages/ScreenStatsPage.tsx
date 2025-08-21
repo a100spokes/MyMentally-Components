@@ -28,9 +28,9 @@ export default function ScreenStatsPage() {
   };
 
   const handleAnswer = (answer: string) => {
-    // Navigate to the next screen in the funnel
+    // Navigate to the ScreenCalc component
     console.log("Stats answer:", answer);
-    // navigate("/next-screen"); // Will be updated when next screen is created
+    navigate("/ScreenCalc");
   };
 
   const handleBack = () => {
