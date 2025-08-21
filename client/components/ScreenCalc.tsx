@@ -197,7 +197,16 @@ export default function ScreenCalc({
         alignItems: "center",
       }}
     >
-      <div className="flex flex-col justify-start items-center mx-auto">
+      <div
+        className="flex flex-col justify-start items-center mx-auto"
+        style={{
+          "@media (max-width: 640px)": {
+            maxWidth: "720px",
+            width: "100%",
+            alignSelf: "center",
+          },
+        }}
+      >
         <div
           className="flex items-start justify-center p-6 gap-4"
           style={{
