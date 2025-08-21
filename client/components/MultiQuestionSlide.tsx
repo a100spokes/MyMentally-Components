@@ -208,7 +208,7 @@ export default function MultiQuestionSlide({ slideObject, onAnswer, onBack }: Mu
                 : 'hover:opacity-90'
             }`}
             style={{
-              backgroundColor: '#9CA3AF'
+              backgroundColor:'#50AEFF'
             }}
           >
             <span className="flex-1 text-white text-center font-roboto text-base font-bold leading-6">
