@@ -73,7 +73,7 @@ export default function ScreenCalc({
       currentPercentage: 0,
       color: section.progressColor.startsWith('#') ? section.progressColor : `#${section.progressColor}`,
       completed: false,
-      pauseAt: section.question?.percProgress || undefined,
+      pauseAt: section.question?.percProgress,
       question: section.question,
     }));
   });
@@ -136,17 +136,17 @@ export default function ScreenCalc({
       return;
     }
 
-    // For sections with questions, determine if we need to pause or go straight to question
+    // Determine target percentage based on question's percProgress
     let targetPercentage;
-    if (currentItem.question) {
-      // If pauseAt is 0 or undefined, go straight to showing the question
-      if (!currentItem.pauseAt || currentItem.pauseAt === 0) {
-        targetPercentage = 1; // Just a small amount to trigger question immediately
+    if (currentItem.question && typeof currentItem.question.percProgress === 'number') {
+      // Use percProgress from the question object
+      if (currentItem.question.percProgress === 0) {
+        targetPercentage = 1; // Show question immediately after starting
       } else {
-        targetPercentage = currentItem.pauseAt;
+        targetPercentage = currentItem.question.percProgress;
       }
     } else {
-      // No question, animate to completion
+      // No question, animate directly to completion
       targetPercentage = currentItem.targetPercentage;
     }
 
