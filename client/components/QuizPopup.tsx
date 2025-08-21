@@ -1,3 +1,5 @@
+import React from "react";
+
 interface QuizPopupButton {
   text: string;
   onClick: () => void;
