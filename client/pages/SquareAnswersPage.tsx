@@ -7,7 +7,8 @@ const sampleSquareAnswersSlideObject = {
   template: "SquareAnswers",
   data: {
     title: "How do you feel about the following statement?",
-    subtitle: '"I often feel a strong urge to take action, even when unnecessary."',
+    subtitle:
+      '"I often feel a strong urge to take action, even when unnecessary."',
   },
   options: [
     {
@@ -44,8 +45,8 @@ export default function SquareAnswersPage() {
   };
 
   return (
-    <SquareAnswers 
-      slideObject={sampleSquareAnswersSlideObject} 
+    <SquareAnswers
+      slideObject={sampleSquareAnswersSlideObject}
       onAnswer={handleAnswer}
       onBack={handleBack}
     />
