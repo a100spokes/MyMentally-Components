@@ -86,15 +86,15 @@ export default function ScreenStats({
                   <div
                     className="w-5 rounded-t-md"
                     style={{
-                      height: '120px',
-                      background: '#FF8DE1'
+                      height: "120px",
+                      background: "#FF8DE1",
                     }}
                   ></div>
                   <div
                     className="w-5 rounded-t-md ml-2 flex-shrink-0"
                     style={{
-                      height: '200px',
-                      background: '#5D88FF'
+                      height: "200px",
+                      background: "#5D88FF",
                     }}
                   ></div>
                 </div>
@@ -109,15 +109,15 @@ export default function ScreenStats({
                   <div
                     className="w-5 rounded-t-md"
                     style={{
-                      height: '60px',
-                      background: '#FF8DE1'
+                      height: "60px",
+                      background: "#FF8DE1",
                     }}
                   ></div>
                   <div
                     className="w-5 rounded-t-md ml-2 flex-shrink-0"
                     style={{
-                      height: '170px',
-                      background: '#5D88FF'
+                      height: "170px",
+                      background: "#5D88FF",
                     }}
                   ></div>
                 </div>
@@ -132,15 +132,15 @@ export default function ScreenStats({
                   <div
                     className="w-5 rounded-t-md"
                     style={{
-                      height: '90px',
-                      background: '#FF8DE1'
+                      height: "90px",
+                      background: "#FF8DE1",
                     }}
                   ></div>
                   <div
                     className="w-5 rounded-t-md ml-2 flex-shrink-0"
                     style={{
-                      height: '230px',
-                      background: '#5D88FF'
+                      height: "230px",
+                      background: "#5D88FF",
                     }}
                   ></div>
                 </div>
@@ -155,15 +155,15 @@ export default function ScreenStats({
                   <div
                     className="w-5 rounded-t-md"
                     style={{
-                      height: '70px',
-                      background: '#FF8DE1'
+                      height: "70px",
+                      background: "#FF8DE1",
                     }}
                   ></div>
                   <div
                     className="w-5 rounded-t-md ml-2 flex-shrink-0"
                     style={{
-                      height: '220px',
-                      background: '#5D88FF'
+                      height: "220px",
+                      background: "#5D88FF",
                     }}
                   ></div>
                 </div>
@@ -180,7 +180,7 @@ export default function ScreenStats({
               <div className="h-21 flex-shrink-0 w-full border-b border-gray-200"></div>
               <div
                 className="transform -rotate-90 text-slate-800 font-roboto text-sm leading-6 my-auto"
-                style={{ transformOrigin: 'center' }}
+                style={{ transformOrigin: "center" }}
               >
                 Quality
               </div>
@@ -201,8 +201,8 @@ export default function ScreenStats({
             <div className="flex w-75 px-4 items-start">
               <p className="text-slate-800 font-roboto text-sm font-normal leading-5">
                 The National Library of Medicine estimates that about{" "}
-                <span className="font-bold">366.3 million</span> adults worldwide
-                show symptoms of ADHD
+                <span className="font-bold">366.3 million</span> adults
+                worldwide show symptoms of ADHD
               </p>
             </div>
           </div>
@@ -217,8 +217,9 @@ export default function ScreenStats({
             <div className="flex w-75 h-20 px-3 flex-col justify-center items-start">
               <p className="text-slate-800 font-roboto text-sm font-normal leading-5">
                 The U.S. Centers for Disease Control and Prevention report that{" "}
-                <span className="font-bold">around 60%</span> of children with ADHD
-                also have another mental, emotional, or behavioral condition
+                <span className="font-bold">around 60%</span> of children with
+                ADHD also have another mental, emotional, or behavioral
+                condition
               </p>
             </div>
           </div>

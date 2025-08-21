@@ -16,15 +16,15 @@ export default function ScreenStatsPage() {
         {
           id: "section_1",
           image: "https://",
-          text: "The National Library of Medicine estimates that about 366.3 million adults worldwide show symptoms of ADHD"
+          text: "The National Library of Medicine estimates that about 366.3 million adults worldwide show symptoms of ADHD",
         },
         {
           id: "section_2",
           image: "https://",
-          text: "The U.S. Centers for Disease Control and Prevention report that around 60% of children with ADHD also have another mental, emotional, or behavioral condition"
-        }
-      ]
-    }
+          text: "The U.S. Centers for Disease Control and Prevention report that around 60% of children with ADHD also have another mental, emotional, or behavioral condition",
+        },
+      ],
+    },
   };
 
   const handleAnswer = (answer: string) => {
