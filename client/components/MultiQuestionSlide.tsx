@@ -179,7 +179,7 @@ export default function MultiQuestionSlide({ slideObject, onAnswer, onBack }: Mu
                 <div className={`w-6 h-6 rounded-md border-2 flex items-center justify-center ${
                   isSelected(option.id)
                     ? 'bg-indigo-100 border-indigo-100'
-                    : 'border-gray-300'
+                  : 'bg-indigo-300 border-indigo-300'
                 }`}>
                   {isSelected(option.id) && (
                     <span className="text-indigo-500 text-2xl leading-6">✓</span>
