@@ -127,6 +127,10 @@ export default function ScreenCalc({
             background: "linear-gradient(180deg, #F0F2FF 0%, #E8E8F5 100%)",
             height: "100vh",
             width: "420px",
+            "@media (max-width: 640px)": {
+              width: "100%",
+              height: "100vh",
+            },
           }}
         >
           <div 
