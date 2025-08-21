@@ -115,6 +115,9 @@ export default function ScreenCalc({
       style={{
         backgroundColor: "#ebecf9",
         font: '400 16px/24px Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
+        height: "100vh",
+        justifyContent: "flex-start",
+        alignItems: "center",
       }}
     >
       <div className="flex flex-col justify-start items-center mx-auto">
