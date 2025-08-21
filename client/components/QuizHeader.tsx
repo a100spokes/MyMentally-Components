@@ -7,11 +7,11 @@ interface QuizHeaderProps {
   onBack?: () => void;
 }
 
-export function QuizHeader({ 
-  title, 
-  currentStep, 
-  totalSteps, 
-  onBack 
+export function QuizHeader({
+  title,
+  currentStep,
+  totalSteps,
+  onBack,
 }: QuizHeaderProps) {
   return (
     <div className="flex items-center justify-between w-full px-2">

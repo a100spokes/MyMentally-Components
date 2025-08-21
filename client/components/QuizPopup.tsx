@@ -16,7 +16,7 @@ export function QuizPopup({ isOpen, question, buttons }: QuizPopupProps) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-6">
-      <div 
+      <div
         className="bg-white rounded-2xl w-full max-w-sm overflow-hidden"
         style={{
           backdropFilter: "blur(27px)",
@@ -25,7 +25,7 @@ export function QuizPopup({ isOpen, question, buttons }: QuizPopupProps) {
       >
         {/* Header with Question */}
         <div className="px-6 py-5 flex flex-col justify-center items-center">
-          <p 
+          <p
             className="text-black font-roboto text-base leading-4 text-center"
             style={{
               fontFeatureSettings: "'liga' off, 'clig' off",
@@ -47,7 +47,7 @@ export function QuizPopup({ isOpen, question, buttons }: QuizPopupProps) {
                 onClick={button.onClick}
                 className="flex-1 py-3 px-2 flex justify-center items-center gap-2"
               >
-                <span 
+                <span
                   className="text-blue-500 text-center font-roboto text-lg leading-6"
                   style={{
                     fontFeatureSettings: "'liga' off, 'clig' off",

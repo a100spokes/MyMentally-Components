@@ -71,7 +71,9 @@ export default function ScreenCalc({
       label: section.progressText,
       targetPercentage: 100,
       currentPercentage: 0,
-      color: section.progressColor.startsWith('#') ? section.progressColor : `#${section.progressColor}`,
+      color: section.progressColor.startsWith("#")
+        ? section.progressColor
+        : `#${section.progressColor}`,
       completed: false,
       pauseAt: section.question?.percProgress,
       question: section.question,
@@ -138,7 +140,10 @@ export default function ScreenCalc({
 
     // Determine target percentage based on question's percProgress
     let targetPercentage;
-    if (currentItem.question && typeof currentItem.question.percProgress === 'number') {
+    if (
+      currentItem.question &&
+      typeof currentItem.question.percProgress === "number"
+    ) {
       // Use percProgress from the question object
       if (currentItem.question.percProgress === 0) {
         targetPercentage = 1; // Show question immediately after starting
@@ -387,7 +392,9 @@ export default function ScreenCalc({
                       key={index}
                       onClick={() => scrollTo(index)}
                       className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                        index === currentTestimonial ? "bg-gray-500" : "bg-gray-300"
+                        index === currentTestimonial
+                          ? "bg-gray-500"
+                          : "bg-gray-300"
                       }`}
                     />
                   ))}
