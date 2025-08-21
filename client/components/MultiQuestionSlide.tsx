@@ -206,7 +206,10 @@ export default function MultiQuestionSlide({ slideObject, onAnswer, onBack }: Mu
               selectedOptions.length === 0
                 ? 'cursor-not-allowed'
                 : 'hover:opacity-90'
-            }`}            
+            }`}
+            style={{
+              backgroundColor: '#9CA3AF'
+            }}
           >
             <span className="flex-1 text-white text-center font-roboto text-base font-bold leading-6">
               {data.buttonText}
