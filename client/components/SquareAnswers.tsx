@@ -51,7 +51,8 @@ export default function SquareAnswers({
       style={{
         background: "linear-gradient(180deg, #F0F2FF 0%, #E8E8F5 100%)",
         "@media (max-width: 640px)": {
-          height: "100vh",
+          height: "auto",
+          flexGrow: "0",
         },
       }}
     >
