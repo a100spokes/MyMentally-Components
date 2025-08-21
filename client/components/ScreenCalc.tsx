@@ -116,33 +116,106 @@ export default function ScreenCalc({
     [emblaApi],
   );
 
-  // Simple progress animation
+  // Start progress animation on mount
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsAnimating(true);
-      // Set first progress to 34%
-      setProgressItems(prev => {
-        const newItems = [...prev];
-        if (newItems[0]) {
-          newItems[0].currentPercentage = 34;
-        }
-        return newItems;
-      });
-    }, 1000);
-
+      animateCurrentProgress();
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
+
+  // Animate current progress item
+  const animateCurrentProgress = () => {
+    if (currentProgressIndex >= progressItems.length) return;
+
+    const currentItem = progressItems[currentProgressIndex];
+    if (currentItem.completed) {
+      // Move to next item
+      setCurrentProgressIndex((prev) => prev + 1);
+      return;
+    }
+
+    // Animate to pause point or completion
+    const targetPercentage = currentItem.pauseAt || currentItem.targetPercentage;
+
+    const interval = setInterval(() => {
+      setProgressItems((prev) => {
+        const newItems = [...prev];
+        const item = newItems[currentProgressIndex];
+
+        if (item.currentPercentage < targetPercentage) {
+          item.currentPercentage = Math.min(
+            item.currentPercentage + 2,
+            targetPercentage,
+          );
+          return newItems;
+        } else {
+          clearInterval(interval);
+
+          // Check if we need to show popup
+          if (
+            item.pauseAt &&
+            item.currentPercentage === item.pauseAt &&
+            !item.completed &&
+            item.question
+          ) {
+            setPopupQuestion(item.question.title);
+            setCurrentQuestion(item.question);
+            setShowPopup(true);
+          } else if (item.currentPercentage === item.targetPercentage) {
+            // Mark as completed and move to next
+            item.completed = true;
+            setTimeout(() => {
+              setCurrentProgressIndex((prev) => prev + 1);
+            }, 500);
+          }
+
+          return newItems;
+        }
+      });
+    }, 50);
+  };
+
+  // Trigger next animation when index changes
+  useEffect(() => {
+    if (currentProgressIndex < progressItems.length && isAnimating) {
+      const timer = setTimeout(animateCurrentProgress, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [currentProgressIndex, isAnimating]);
 
   // Continue animation after popup
   const handlePopupAnswer = (answer: string) => {
     setShowPopup(false);
-    // For demo purposes, just complete the current progress
-    setProgressItems(prev => {
+
+    // Continue current progress to 100%
+    setProgressItems((prev) => {
       const newItems = [...prev];
-      if (newItems[currentProgressIndex]) {
-        newItems[currentProgressIndex].completed = true;
-        newItems[currentProgressIndex].currentPercentage = 100;
-      }
+      const item = newItems[currentProgressIndex];
+
+      const interval = setInterval(() => {
+        setProgressItems((current) => {
+          const updated = [...current];
+          const currentItem = updated[currentProgressIndex];
+
+          if (currentItem.currentPercentage < currentItem.targetPercentage) {
+            currentItem.currentPercentage = Math.min(
+              currentItem.currentPercentage + 3,
+              currentItem.targetPercentage,
+            );
+            return updated;
+          } else {
+            clearInterval(interval);
+            currentItem.completed = true;
+            setTimeout(() => {
+              setCurrentProgressIndex((prev) => prev + 1);
+            }, 500);
+            return updated;
+          }
+        });
+      }, 30);
+
       return newItems;
     });
   };
