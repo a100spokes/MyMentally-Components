@@ -111,111 +111,130 @@ export default function ScreenCalc({
 
   return (
     <div
-      className="flex items-center min-h-screen p-6 gap-4"
+      className="flex flex-col"
       style={{
-        background: "linear-gradient(180deg, #F0F2FF 0%, #E8E8F5 100%)",
-        height: "100vh",
+        backgroundColor: "#ebecf9",
+        font: '400 16px/24px Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
       }}
     >
-      <div 
-        className="flex h-full max-w-md p-6 flex-col items-start gap-7 flex-1"
-        style={{
-          background: "linear-gradient(180deg, #F0F2FF 0%, #E8E8F5 100%)",
-          paddingTop: "43px",
-          paddingBottom: "5px",
-        }}
-      >
-        {/* Title */}
-        <div className="flex flex-col items-center w-full">
-          <h1 className="text-slate-800 text-center font-roboto text-3xl font-bold leading-9">
-            {data.description}
-          </h1>
-        </div>
+      <div className="flex flex-col justify-start items-center mx-auto">
+        <div
+          className="flex items-start justify-center p-6 gap-4"
+          style={{
+            background: "linear-gradient(180deg, #F0F2FF 0%, #E8E8F5 100%)",
+            height: "100vh",
+            width: "420px",
+          }}
+        >
+          <div 
+            className="flex h-full max-w-md flex-col items-center gap-7 flex-1"
+            style={{
+              background: "linear-gradient(180deg, #F0F2FF 0%, #E8E8F5 100%)",
+              paddingTop: "43px",
+              paddingLeft: "24px",
+              paddingRight: "24px",
+              paddingBottom: "5px",
+            }}
+          >
+            {/* Title */}
+            <div className="flex flex-col items-center w-full">
+              <h1 className="text-slate-800 text-center font-roboto text-3xl font-bold leading-9">
+                {data.description}
+              </h1>
+            </div>
 
-        {/* Progress Sections */}
-        <div className="flex pb-4 flex-col items-start gap-6 w-full">
-          {progressSection.map((section, index) => {
-            const percentage = getProgressPercentage(section);
-            const progressColor = getProgressColor(section.progressColor);
-            const textColor = percentage > 0 ? progressColor : "#C084FC";
+            {/* Progress Sections */}
+            <div className="flex pb-4 flex-col items-start gap-6 w-full">
+              {progressSection.map((section, index) => {
+                const percentage = getProgressPercentage(section);
+                const progressColor = getProgressColor(section.progressColor);
+                const textColor = percentage > 0 ? progressColor : section.progressColor.startsWith('#') ? section.progressColor : `#${section.progressColor}`;
 
-            return (
-              <div key={section.id} className="flex flex-col items-start gap-1 w-full">
-                {/* Progress Text and Percentage */}
-                <div className="flex justify-between items-center w-full">
-                  <div className="flex flex-col items-start">
-                    <span className="text-slate-800 font-inter text-base font-medium leading-6">
-                      {section.progressText}
-                    </span>
+                return (
+                  <div key={section.id} className="flex flex-col items-start gap-1 w-full">
+                    {/* Progress Text and Percentage */}
+                    <div className="flex justify-between items-center w-full">
+                      <div className="flex flex-col items-start">
+                        <span className="text-slate-800 font-inter text-base font-medium leading-6">
+                          {section.progressText}
+                        </span>
+                      </div>
+                      <div className="flex flex-col items-start">
+                        <span 
+                          className="font-inter text-base font-bold leading-6"
+                          style={{ color: textColor }}
+                        >
+                          {percentage}%
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Progress Bar */}
+                    <div className="flex h-2.5 items-center w-full rounded-full bg-gray-200 relative">
+                      {percentage > 0 && (
+                        <div
+                          className="h-2.5 rounded-full absolute left-0 top-0"
+                          style={{
+                            width: `${percentage}%`,
+                            backgroundColor: progressColor,
+                          }}
+                        />
+                      )}
+                    </div>
                   </div>
-                  <div className="flex flex-col items-start">
-                    <span 
-                      className="font-inter text-base font-bold leading-6"
-                      style={{ color: textColor }}
-                    >
-                      {percentage}%
-                    </span>
-                  </div>
+                );
+              })}
+            </div>
+
+            {/* Review Carousel */}
+            <div 
+              className="flex p-6 flex-col items-start gap-3 flex-shrink-0 w-full rounded-2xl bg-white relative overflow-hidden"
+              style={{
+                height: "209px",
+                boxShadow: "9px 12px 20px -3px #D4D3F2",
+              }}
+            >
+              {/* Stars and Rating */}
+              <div className="flex justify-center items-center w-full">
+                <div className="flex items-start">
+                  {generateStars(reviews[currentReviewIndex].rating)}
                 </div>
-
-                {/* Progress Bar */}
-                <div className="flex h-2.5 items-center w-full rounded-full bg-gray-200 relative">
-                  {percentage > 0 && (
-                    <div
-                      className="h-2.5 rounded-full absolute left-0 top-0"
-                      style={{
-                        width: `${percentage}%`,
-                        backgroundColor: progressColor,
-                      }}
-                    />
-                  )}
+                <div className="flex pl-2 flex-col items-start">
+                  <span className="text-slate-800 font-inter text-lg font-bold leading-7">
+                    {reviews[currentReviewIndex].rating}
+                  </span>
                 </div>
               </div>
-            );
-          })}
-        </div>
 
-        {/* Review Carousel */}
-        <div className="flex h-52 p-6 flex-col items-start gap-3 flex-shrink-0 w-full rounded-2xl bg-white shadow-lg">
-          {/* Stars and Rating */}
-          <div className="flex justify-center items-center w-full">
-            <div className="flex items-start">
-              {generateStars(reviews[currentReviewIndex].rating)}
+              {/* Review Text */}
+              <div className="flex flex-col items-center w-full">
+                <p className="text-slate-800 text-center font-roboto text-lg leading-7 w-full">
+                  {reviews[currentReviewIndex].review}
+                </p>
+              </div>
+
+              {/* Author */}
+              <div className="flex pt-1 flex-col items-center w-full">
+                <span className="text-gray-500 text-center font-inter text-base leading-6 w-full">
+                  {reviews[currentReviewIndex].subtitle}
+                </span>
+              </div>
             </div>
-            <div className="flex pl-2 flex-col items-start">
-              <span className="text-slate-800 font-inter text-lg font-bold leading-7">
-                {reviews[currentReviewIndex].rating}
-              </span>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center items-start w-full">
+              {reviews.map((_, index) => (
+                <div key={index} className="flex items-center">
+                  <div
+                    className={`w-2.5 h-2.5 rounded-full ${
+                      index === currentReviewIndex ? "bg-gray-600" : "bg-gray-300"
+                    }`}
+                  />
+                  {index < reviews.length - 1 && <div className="w-2" />}
+                </div>
+              ))}
             </div>
           </div>
-
-          {/* Review Text */}
-          <div className="flex flex-col items-center w-full">
-            <p className="text-slate-800 text-center font-roboto text-lg leading-7 w-full">
-              {reviews[currentReviewIndex].review}
-            </p>
-          </div>
-
-          {/* Author */}
-          <div className="flex pt-1 flex-col items-center w-full">
-            <span className="text-gray-500 text-center font-inter text-base leading-6 w-full">
-              {reviews[currentReviewIndex].subtitle}
-            </span>
-          </div>
-        </div>
-
-        {/* Pagination Dots */}
-        <div className="flex justify-center items-start w-full">
-          {reviews.map((_, index) => (
-            <div key={index} className="flex items-center">
-              <div
-                className={`w-2.5 h-2.5 rounded-full ${
-                  index === currentReviewIndex ? "bg-gray-600" : "bg-gray-300"
-                }`}
-              />
-              {index < reviews.length - 1 && <div className="w-2" />}
-            </div>
-          ))}
         </div>
       </div>
     </div>
