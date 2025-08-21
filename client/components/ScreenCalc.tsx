@@ -73,7 +73,7 @@ export default function ScreenCalc({
       currentPercentage: 0,
       color: section.progressColor.startsWith('#') ? section.progressColor : `#${section.progressColor}`,
       completed: false,
-      pauseAt: section.question?.percProgress,
+      pauseAt: section.question?.percProgress || undefined,
       question: section.question,
     }));
   });
@@ -136,8 +136,19 @@ export default function ScreenCalc({
       return;
     }
 
-    // Animate to pause point or completion
-    const targetPercentage = currentItem.pauseAt || currentItem.targetPercentage;
+    // For sections with questions, determine if we need to pause or go straight to question
+    let targetPercentage;
+    if (currentItem.question) {
+      // If pauseAt is 0 or undefined, go straight to showing the question
+      if (!currentItem.pauseAt || currentItem.pauseAt === 0) {
+        targetPercentage = 1; // Just a small amount to trigger question immediately
+      } else {
+        targetPercentage = currentItem.pauseAt;
+      }
+    } else {
+      // No question, animate to completion
+      targetPercentage = currentItem.targetPercentage;
+    }
 
     const interval = setInterval(() => {
       setProgressItems((prev) => {
@@ -153,13 +164,8 @@ export default function ScreenCalc({
         } else {
           clearInterval(interval);
 
-          // Check if we need to show popup
-          if (
-            item.pauseAt &&
-            item.currentPercentage === item.pauseAt &&
-            !item.completed &&
-            item.question
-          ) {
+          // Check if we need to show popup for question
+          if (item.question && !item.completed) {
             setPopupQuestion(item.question.title);
             setCurrentQuestion(item.question);
             setShowPopup(true);
