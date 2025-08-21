@@ -38,6 +38,8 @@ export default function App() {
             <Route path="/ScreenReviewsPage" element={<ScreenReviewsPage />} />
             <Route path="/ScreenStats" element={<ScreenStatsPage />} />
             <Route path="/ScreenStatsPage" element={<ScreenStatsPage />} />
+            <Route path="/ScreenCalc" element={<ScreenCalcPage />} />
+            <Route path="/ScreenCalcPage" element={<ScreenCalcPage />} />
             <Route path="/progress" element={<ProgressScreen />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
