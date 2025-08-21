@@ -75,15 +75,27 @@ export default function ScreenStats({
         </div>
 
         {/* Chart Container */}
-        <div className="flex px-6 w-full">
+        <div className="flex px-6 flex-col items-start w-full">
           <div className="relative w-full">
-            {/* Chart Area */}
-            <div className="flex justify-between items-end h-64 border-b border-l border-gray-300 pb-1 pl-1">
+            {/* Chart Area with Border */}
+            <div className="flex h-64 justify-between items-end border-b border-l border-gray-400 pb-px pl-px">
               {/* Focus Column */}
               <div className="flex flex-col items-center flex-1">
-                <div className="flex justify-center items-end">
-                  <div className="w-5 h-30 bg-pink-400 rounded-t-md"></div>
-                  <div className="w-5 h-50 bg-blue-500 rounded-t-md ml-2"></div>
+                <div className="flex justify-center items-end px-6">
+                  <div
+                    className="w-5 rounded-t-md"
+                    style={{
+                      height: '120px',
+                      background: '#FF8DE1'
+                    }}
+                  ></div>
+                  <div
+                    className="w-5 rounded-t-md ml-2 flex-shrink-0"
+                    style={{
+                      height: '200px',
+                      background: '#5D88FF'
+                    }}
+                  ></div>
                 </div>
                 <div className="mt-2 text-slate-800 font-roboto text-sm leading-6">
                   Focus
@@ -92,9 +104,21 @@ export default function ScreenStats({
 
               {/* Career Column */}
               <div className="flex flex-col items-center flex-1">
-                <div className="flex justify-center items-end">
-                  <div className="w-5 h-15 bg-pink-400 rounded-t-md"></div>
-                  <div className="w-5 h-42 bg-blue-500 rounded-t-md ml-2"></div>
+                <div className="flex justify-center items-end px-6">
+                  <div
+                    className="w-5 rounded-t-md"
+                    style={{
+                      height: '60px',
+                      background: '#FF8DE1'
+                    }}
+                  ></div>
+                  <div
+                    className="w-5 rounded-t-md ml-2 flex-shrink-0"
+                    style={{
+                      height: '170px',
+                      background: '#5D88FF'
+                    }}
+                  ></div>
                 </div>
                 <div className="mt-2 text-slate-800 font-roboto text-sm leading-6">
                   Career
@@ -103,9 +127,21 @@ export default function ScreenStats({
 
               {/* Productivity Column */}
               <div className="flex flex-col items-center flex-1">
-                <div className="flex justify-center items-end">
-                  <div className="w-5 h-22 bg-pink-400 rounded-t-md"></div>
-                  <div className="w-5 h-56 bg-blue-500 rounded-t-md ml-2"></div>
+                <div className="flex justify-center items-end px-6">
+                  <div
+                    className="w-5 rounded-t-md"
+                    style={{
+                      height: '90px',
+                      background: '#FF8DE1'
+                    }}
+                  ></div>
+                  <div
+                    className="w-5 rounded-t-md ml-2 flex-shrink-0"
+                    style={{
+                      height: '230px',
+                      background: '#5D88FF'
+                    }}
+                  ></div>
                 </div>
                 <div className="mt-2 text-slate-800 font-roboto text-sm leading-6">
                   Productivity
@@ -113,12 +149,24 @@ export default function ScreenStats({
               </div>
 
               {/* Decision-making Column */}
-              <div className="flex flex-col items-center flex-1">
-                <div className="flex justify-center items-end">
-                  <div className="w-5 h-17 bg-pink-400 rounded-t-md"></div>
-                  <div className="w-5 h-55 bg-blue-500 rounded-t-md ml-2"></div>
+              <div className="flex flex-col items-center flex-1 py-px">
+                <div className="flex justify-center items-end px-6 h-54">
+                  <div
+                    className="w-5 rounded-t-md"
+                    style={{
+                      height: '70px',
+                      background: '#FF8DE1'
+                    }}
+                  ></div>
+                  <div
+                    className="w-5 rounded-t-md ml-2 flex-shrink-0"
+                    style={{
+                      height: '220px',
+                      background: '#5D88FF'
+                    }}
+                  ></div>
                 </div>
-                <div className="mt-2 text-slate-800 font-roboto text-sm leading-3 text-center">
+                <div className="mt-3 text-slate-800 font-roboto text-sm leading-4 text-center w-14 h-9">
                   Decision-
                   <br />
                   making
@@ -126,19 +174,16 @@ export default function ScreenStats({
               </div>
             </div>
 
-            {/* Y-axis label */}
-            <div 
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 -rotate-90 text-slate-800 font-roboto text-sm leading-6"
-              style={{ transformOrigin: 'center' }}
-            >
-              Quality
-            </div>
-
-            {/* Horizontal grid lines */}
-            <div className="absolute top-0 left-1 w-full h-64 pointer-events-none">
-              <div className="absolute top-0 w-full h-0 border-t border-gray-200"></div>
-              <div className="absolute top-1/3 w-full h-0 border-t border-gray-200"></div>
-              <div className="absolute top-2/3 w-full h-0 border-t border-gray-200"></div>
+            {/* Y-axis with grid lines */}
+            <div className="absolute left-0 top-0 w-93 h-64 flex flex-col justify-between items-start">
+              <div className="h-21 flex-shrink-0 w-full border-b border-gray-200"></div>
+              <div
+                className="transform -rotate-90 text-slate-800 font-roboto text-sm leading-6"
+                style={{ transformOrigin: 'center' }}
+              >
+                Quality
+              </div>
+              <div className="h-21 flex-shrink-0 w-full border-b border-gray-200"></div>
             </div>
           </div>
         </div>
