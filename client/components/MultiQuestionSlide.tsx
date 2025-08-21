@@ -204,7 +204,7 @@ export default function MultiQuestionSlide({ slideObject, onAnswer, onBack }: Mu
             disabled={selectedOptions.length === 0}
             className={`flex justify-center items-center w-full py-4 rounded-full transition-all duration-200 shadow-lg ${
               selectedOptions.length === 0
-                ? 'cursor-not-allowed opacity-50'
+                ? 'cursor-not-allowed'
                 : 'hover:opacity-90'
             }`}
             style={{
