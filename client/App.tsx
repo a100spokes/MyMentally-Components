@@ -13,6 +13,7 @@ import MultiQuestion from "./pages/MultiQuestion";
 import SquareAnswersPage from "./pages/SquareAnswersPage";
 import ScreenReviewsPage from "./pages/ScreenReviewsPage";
 import ScreenStatsPage from "./pages/ScreenStatsPage";
+import ScreenCalcPage from "./pages/ScreenCalcPage";
 import ProgressScreen from "./pages/ProgressScreen";
 import NotFound from "./pages/NotFound";
 
