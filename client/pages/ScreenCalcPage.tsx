@@ -35,7 +35,7 @@ export default function ScreenCalcPage() {
         question: {
           id: "question_2",
           idProgress: "section_2",
-          percProgress: 0,
+          percProgress: 32,
           title: "Has anyone in your family ever been diagnosed with ADHD or another mental health condition?",
           answers: [
             { id: "answer_2_1", text: "Yes" },
@@ -50,7 +50,7 @@ export default function ScreenCalcPage() {
         question: {
           id: "question_3",
           idProgress: "section_3",
-          percProgress: 0,
+          percProgress: 17,
           title: "Would you say you're sensitive to strong sounds and bright light?",
           answers: [
             { id: "answer_3_1", text: "Yes" },
