@@ -49,13 +49,17 @@ export default function ScreenReviews({
 
     for (let i = 0; i < fullStars; i++) {
       stars.push(
-        <span key={i} className="text-yellow-400 text-2xl">★</span>
+        <span key={i} className="text-yellow-400 text-2xl">
+          ★
+        </span>,
       );
     }
 
     if (hasHalfStar) {
       stars.push(
-        <span key="half" className="text-yellow-400 text-2xl">☆</span>
+        <span key="half" className="text-yellow-400 text-2xl">
+          ☆
+        </span>,
       );
     }
 
@@ -87,7 +91,7 @@ export default function ScreenReviews({
               alt="Review background"
               className="w-full max-w-sm h-60 object-cover rounded-2xl"
             />
-            
+
             {/* Review Card - Overlapping */}
             <div className="flex flex-col justify-center items-center gap-2 w-full max-w-xs p-6 bg-white rounded-2xl shadow-lg -mt-16 relative z-10">
               {/* Name and Rating Row */}
