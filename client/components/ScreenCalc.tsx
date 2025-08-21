@@ -204,22 +204,11 @@ export default function ScreenCalc({
           style={{
             background: "linear-gradient(180deg, #F0F2FF 0%, #E8E8F5 100%)",
             height: "100vh",
-            width: "420px",
-            "@media (max-width: 640px)": {
-              width: "100%",
-              height: "100vh",
-            },
+            width: "100%",
+            maxWidth: "720px",
           }}
         >
-          <div className="flex flex-col items-center p-6 max-w-md mx-auto w-full gap-6">
-            {/* Header */}
-            <QuizHeader
-              title=""
-              currentStep={26}
-              totalSteps={36}
-              onBack={onBack}
-            />
-
+          <div className="flex flex-col items-center max-w-md w-full gap-6 mx-auto p-6">
             {/* Main Content */}
             <div className="flex-1 flex flex-col justify-center items-center w-full gap-6">
               {/* Title */}
