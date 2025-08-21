@@ -22,10 +22,9 @@ export default function ScreenReviewsPage() {
   };
 
   const handleAnswer = (answer: string) => {
-    // Navigate to the next screen in the funnel
-    // For now, navigating to a placeholder route
+    // Navigate to the ScreenStats component
     console.log("Review answer:", answer);
-    // navigate("/next-screen");
+    navigate("/ScreenStats");
   };
 
   const handleBack = () => {
