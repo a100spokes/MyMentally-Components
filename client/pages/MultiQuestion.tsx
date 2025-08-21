@@ -54,9 +54,8 @@ export default function MultiQuestion() {
 
   const handleAnswer = (selectedOptions: string[]) => {
     console.log("Selected options:", selectedOptions);
-    // Here you would typically save the answers and navigate to next screen
-    // For now, just log the selections
-    // navigate("/next-screen");
+    // Navigate to square answers screen after selecting multiple options
+    navigate("/SquareAnswers");
   };
 
   const handleBack = () => {
