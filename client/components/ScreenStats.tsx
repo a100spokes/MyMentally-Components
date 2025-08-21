@@ -48,6 +48,7 @@ export default function ScreenStats({
       className="flex flex-col items-center min-h-screen p-6 gap-4"
       style={{
         background: "linear-gradient(180deg, #F0F2FF 0%, #E8E8F5 100%)",
+        height: "100vh",
       }}
     >
       <div className="flex flex-col items-start gap-4 w-full max-w-md">
@@ -76,7 +77,7 @@ export default function ScreenStats({
 
         {/* Chart Container */}
         <div className="flex px-6 flex-col items-start w-full">
-          <div className="relative w-full">
+          <div className="relative w-full flex flex-col">
             {/* Chart Area with Border */}
             <div className="flex h-64 justify-between items-end border-b border-l border-gray-400 pb-px pl-px">
               {/* Focus Column */}
@@ -175,10 +176,10 @@ export default function ScreenStats({
             </div>
 
             {/* Y-axis with grid lines */}
-            <div className="absolute left-0 top-0 w-93 h-64 flex flex-col justify-between items-start">
+            <div className="absolute left-0 top-0 w-93 h-64 flex flex-col justify-between items-start text-right">
               <div className="h-21 flex-shrink-0 w-full border-b border-gray-200"></div>
               <div
-                className="transform -rotate-90 text-slate-800 font-roboto text-sm leading-6"
+                className="transform -rotate-90 text-slate-800 font-roboto text-sm leading-6 my-auto"
                 style={{ transformOrigin: 'center' }}
               >
                 Quality
