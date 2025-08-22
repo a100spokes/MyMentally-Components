@@ -98,9 +98,9 @@ export default function ScreenCalcPage() {
   };
 
   const handleAnswer = (answer: string) => {
-    // Navigate to the next screen in the funnel
+    // Navigate to the email screen
     console.log("Calc answer:", answer);
-    // navigate("/next-screen"); // Will be updated when next screen is created
+    navigate("/ScreenEmail");
   };
 
   const handleBack = () => {
