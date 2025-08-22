@@ -9,10 +9,12 @@ export default function ScreenEmailPage() {
     type: "email",
     template: "ScreenEmail",
     data: {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/61bbbe2845908ff4a6c0ce759c3690c73b32cc2f?width=320",
+      image:
+        "https://api.builder.io/api/v1/image/assets/TEMP/61bbbe2845908ff4a6c0ce759c3690c73b32cc2f?width=320",
       buttonText: "Explore results",
       title: "Enter email to receive your personal plan",
-      description: "We promise not to use your email for any activities, and we guarantee its 100% safety and privacy.",
+      description:
+        "We promise not to use your email for any activities, and we guarantee its 100% safety and privacy.",
       placeholder: "Enter your email",
       skip: false,
     },
