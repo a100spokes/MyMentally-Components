@@ -373,7 +373,7 @@ export default function ScreenPaywall({
               <img
                 src={choseUsSection.image}
                 alt="User testimonial"
-                className="w-full h-64 object-cover"
+                className="w-full h-full object-cover"
                 onError={(e) => {
                   // Fallback if image fails to load
                   e.currentTarget.style.display = 'none';
