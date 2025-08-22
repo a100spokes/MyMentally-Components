@@ -94,28 +94,33 @@ export default function ScreenPaywall({
   onAnswer,
   onBack,
 }: ScreenPaywallProps) {
-  const { 
-    data, 
-    countdownSection, 
-    progressSection, 
-    graphSection, 
-    affectSection, 
-    tariffSection, 
-    choseUsSection, 
-    faqSection 
+  const {
+    data,
+    countdownSection,
+    progressSection,
+    graphSection,
+    affectSection,
+    tariffSection,
+    choseUsSection,
+    faqSection,
   } = slideObject;
 
   // Parse countdown time from string (e.g., "600000ms" -> 600000)
-  const initialTime = parseInt(countdownSection.countdownStartTime.replace('ms', '')) / 1000;
+  const initialTime =
+    parseInt(countdownSection.countdownStartTime.replace("ms", "")) / 1000;
   const [timeLeft, setTimeLeft] = useState(initialTime);
   const [selectedTariff, setSelectedTariff] = useState(
-    tariffSection.options.find(option => option.isDefault)?.id || tariffSection.options[0]?.id || ""
+    tariffSection.options.find((option) => option.isDefault)?.id ||
+      tariffSection.options[0]?.id ||
+      "",
   );
   const [expandedFAQ, setExpandedFAQ] = useState<string | null>(null);
 
   // Animated progress state
-  const [animatedProgress, setAnimatedProgress] = useState<Record<string, number>>(
-    progressSection.reduce((acc, section) => ({ ...acc, [section.id]: 0 }), {})
+  const [animatedProgress, setAnimatedProgress] = useState<
+    Record<string, number>
+  >(
+    progressSection.reduce((acc, section) => ({ ...acc, [section.id]: 0 }), {}),
   );
 
   // Timer countdown effect
@@ -149,12 +154,14 @@ export default function ScreenPaywall({
         currentStep++;
         const progress = Math.min(currentStep / animationSteps, 1);
 
-        setAnimatedProgress(prev => {
+        setAnimatedProgress((prev) => {
           const newProgress = { ...prev };
-          progressSection.forEach(section => {
+          progressSection.forEach((section) => {
             // Use easeOutCubic for smooth animation
             const easeProgress = 1 - Math.pow(1 - progress, 3);
-            newProgress[section.id] = Math.round(section.percProgress * easeProgress);
+            newProgress[section.id] = Math.round(
+              section.percProgress * easeProgress,
+            );
           });
           return newProgress;
         });
@@ -173,7 +180,7 @@ export default function ScreenPaywall({
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${String(mins).padStart(2, '0')} : ${String(secs).padStart(2, '0')}`;
+    return `${String(mins).padStart(2, "0")} : ${String(secs).padStart(2, "0")}`;
   };
 
   const handleTariffSelect = (tariffId: string) => {
@@ -188,12 +195,16 @@ export default function ScreenPaywall({
     setExpandedFAQ(expandedFAQ === faqId ? null : faqId);
   };
 
-  const renderProgressBar = (progress: number, color: string, sectionId: string) => (
+  const renderProgressBar = (
+    progress: number,
+    color: string,
+    sectionId: string,
+  ) => (
     <div className="h-2.5 bg-gray-200 rounded-full overflow-hidden w-full">
       <div
         className="h-full rounded-full transition-all duration-200 ease-out"
         style={{
-          backgroundColor: color.startsWith('#') ? color : `#${color}`,
+          backgroundColor: color.startsWith("#") ? color : `#${color}`,
           width: `${animatedProgress[sectionId] || 0}%`,
         }}
       />
@@ -209,7 +220,7 @@ export default function ScreenPaywall({
     return {
       icon: iconMap[index % iconMap.length],
       bgColor: bgColorMap[index % bgColorMap.length],
-      textColor: textColorMap[index % textColorMap.length]
+      textColor: textColorMap[index % textColorMap.length],
     };
   };
 
@@ -224,7 +235,9 @@ export default function ScreenPaywall({
       <div className="max-w-md mx-auto p-4 space-y-6">
         {/* Countdown Section */}
         <div className="bg-blue-100 rounded-lg p-4">
-          <p className="text-blue-800 text-sm mb-2">{countdownSection.countdownText}</p>
+          <p className="text-blue-800 text-sm mb-2">
+            {countdownSection.countdownText}
+          </p>
           <div className="flex items-center justify-between">
             <div className="text-blue-800 text-3xl font-bold">
               {formatTime(timeLeft)}
@@ -252,8 +265,14 @@ export default function ScreenPaywall({
           {progressSection.map((section) => (
             <div key={section.id} className="bg-white rounded-lg p-4 shadow-sm">
               <h3 className="font-bold text-gray-800 mb-2">{section.title}</h3>
-              <p className="text-gray-600 text-sm mb-3">{section.progressText}</p>
-              {renderProgressBar(section.percProgress, section.progressColor, section.id)}
+              <p className="text-gray-600 text-sm mb-3">
+                {section.progressText}
+              </p>
+              {renderProgressBar(
+                section.percProgress,
+                section.progressColor,
+                section.id,
+              )}
             </div>
           ))}
         </div>
@@ -267,7 +286,7 @@ export default function ScreenPaywall({
               className="w-full h-auto"
               onError={(e) => {
                 // Fallback if image fails to load
-                e.currentTarget.style.display = 'none';
+                e.currentTarget.style.display = "none";
               }}
             />
           </div>
@@ -276,9 +295,10 @@ export default function ScreenPaywall({
         {/* Affect Section */}
         <div className="text-center space-y-4">
           <h2 className="text-2xl font-bold text-gray-800">
-            {affectSection.title.includes('daily life') ? (
+            {affectSection.title.includes("daily life") ? (
               <>
-                How ADHD affects your <span className="text-blue-500">daily life</span>
+                How ADHD affects your{" "}
+                <span className="text-blue-500">daily life</span>
               </>
             ) : (
               affectSection.title
@@ -296,16 +316,24 @@ export default function ScreenPaywall({
             {affectSection.options.map((option, index) => {
               const iconData = getIconForAffectOption(option, index);
               return (
-                <div key={option.id} className="bg-white rounded-lg p-4 shadow-sm flex items-center gap-4">
+                <div
+                  key={option.id}
+                  className="bg-white rounded-lg p-4 shadow-sm flex items-center gap-4"
+                >
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-2xl"
-                    style={{ backgroundColor: iconData.bgColor, color: iconData.textColor }}
+                    style={{
+                      backgroundColor: iconData.bgColor,
+                      color: iconData.textColor,
+                    }}
                   >
                     {iconData.icon}
                   </div>
                   <div className="flex-1">
                     <h4 className="font-bold text-gray-800">{option.title}</h4>
-                    <p className="text-sm text-gray-600">{option.description}</p>
+                    <p className="text-sm text-gray-600">
+                      {option.description}
+                    </p>
                   </div>
                 </div>
               );
@@ -321,12 +349,16 @@ export default function ScreenPaywall({
           >
             {data.buttonText}
           </button>
-          <p className="text-center text-sm text-gray-500">* no-commitment, cancel anytime</p>
+          <p className="text-center text-sm text-gray-500">
+            * no-commitment, cancel anytime
+          </p>
         </div>
 
         {/* Tariff Section */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-gray-800">{tariffSection.title}</h2>
+          <h2 className="text-2xl font-bold text-gray-800">
+            {tariffSection.title}
+          </h2>
           <div className="space-y-3">
             {tariffSection.options.map((option) => (
               <div
@@ -349,21 +381,31 @@ export default function ScreenPaywall({
                     )}
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-lg text-gray-800">{option.title}</h3>
+                    <h3 className="font-semibold text-lg text-gray-800">
+                      {option.title}
+                    </h3>
                     <div className="flex items-center gap-2">
-                      <span className="text-xs text-gray-500 line-through">{option.oldPrice}</span>
-                      <span className="text-xs text-gray-600">{option.newPrice}</span>
+                      <span className="text-xs text-gray-500 line-through">
+                        {option.oldPrice}
+                      </span>
+                      <span className="text-xs text-gray-600">
+                        {option.newPrice}
+                      </span>
                     </div>
                   </div>
                   <div
                     className={`px-3 py-2 rounded-lg ${
-                      selectedTariff === option.id ? "bg-blue-500 text-white" : "bg-blue-100 text-gray-800"
+                      selectedTariff === option.id
+                        ? "bg-blue-500 text-white"
+                        : "bg-blue-100 text-gray-800"
                     }`}
                   >
                     <div className="text-right">
                       <div className="flex items-start">
                         <span className="text-xs">$</span>
-                        <span className="text-2xl font-bold">{option.price.replace('$', '')}</span>
+                        <span className="text-2xl font-bold">
+                          {option.price.replace("$", "")}
+                        </span>
                       </div>
                       <div className="text-xs opacity-70">per Day</div>
                     </div>
@@ -393,7 +435,9 @@ export default function ScreenPaywall({
           <div className="flex justify-center">
             <div className="flex items-center gap-1">
               {Array.from({ length: 4 }).map((_, index) => (
-                <span key={index} className="text-yellow-400 text-2xl">★</span>
+                <span key={index} className="text-yellow-400 text-2xl">
+                  ★
+                </span>
               ))}
               <span className="text-yellow-400 text-2xl">☆</span>
             </div>
@@ -403,11 +447,15 @@ export default function ScreenPaywall({
         </div>
 
         {/* Disclaimer */}
-        <p className="text-xs text-gray-500 leading-4">{tariffSection.description}</p>
+        <p className="text-xs text-gray-500 leading-4">
+          {tariffSection.description}
+        </p>
 
         {/* Chose Us Section (Testimonial) */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-gray-800 text-center">{choseUsSection.title}</h2>
+          <h2 className="text-2xl font-bold text-gray-800 text-center">
+            {choseUsSection.title}
+          </h2>
           <div className="relative rounded-lg overflow-hidden">
             {choseUsSection.image && (
               <img
@@ -416,7 +464,7 @@ export default function ScreenPaywall({
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   // Fallback if image fails to load
-                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.style.display = "none";
                 }}
               />
             )}
@@ -428,18 +476,23 @@ export default function ScreenPaywall({
 
         {/* FAQ Section */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-gray-800 text-center">{faqSection.title}</h2>
+          <h2 className="text-2xl font-bold text-gray-800 text-center">
+            {faqSection.title}
+          </h2>
           <div className="space-y-2">
             {faqSection.options.map((faq) => (
-              <div key={faq.id} className="bg-white rounded-lg shadow-sm overflow-hidden">
-                <div 
+              <div
+                key={faq.id}
+                className="bg-white rounded-lg shadow-sm overflow-hidden"
+              >
+                <div
                   className="p-4 cursor-pointer"
                   onClick={() => toggleFAQ(faq.id)}
                 >
                   <div className="flex justify-between items-center">
                     <h3 className="font-bold text-gray-800">{faq.title}</h3>
                     <span className="text-gray-400 text-xl">
-                      {expandedFAQ === faq.id ? '−' : '+'}
+                      {expandedFAQ === faq.id ? "−" : "+"}
                     </span>
                   </div>
                 </div>
@@ -456,8 +509,10 @@ export default function ScreenPaywall({
         {/* Footer Links */}
         <div className="text-center">
           <p className="text-xs text-gray-500">
-            <span className="underline">Contact Us</span> • <span className="underline">Terms</span> • 
-            <span className="underline">Cookie Policy</span> • <span className="underline">Privacy Policy</span>
+            <span className="underline">Contact Us</span> •{" "}
+            <span className="underline">Terms</span> •
+            <span className="underline">Cookie Policy</span> •{" "}
+            <span className="underline">Privacy Policy</span>
           </p>
         </div>
 
@@ -469,7 +524,9 @@ export default function ScreenPaywall({
           >
             {data.buttonText}
           </button>
-          <p className="text-center text-sm text-gray-500">No-commitment, cancel anytime</p>
+          <p className="text-center text-sm text-gray-500">
+            No-commitment, cancel anytime
+          </p>
         </div>
       </div>
     </div>
