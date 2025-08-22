@@ -21,10 +21,9 @@ export default function ScreenEmailPage() {
   };
 
   const handleAnswer = (email: string) => {
-    // Store email and navigate to the next screen
+    // Store email and navigate to the paywall screen
     console.log("Email submitted:", email);
-    // For now, navigate to a placeholder - will be updated when next screen is created
-    // navigate("/next-screen");
+    navigate("/ScreenPaywall");
   };
 
   const handleBack = () => {
