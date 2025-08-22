@@ -193,8 +193,14 @@ export default function ScreenCalc({
     if (currentProgressIndex < progressItems.length && isAnimating) {
       const timer = setTimeout(animateCurrentProgress, 300);
       return () => clearTimeout(timer);
+    } else if (currentProgressIndex >= progressItems.length && isAnimating) {
+      // All progress items completed, navigate to next screen after delay
+      const timer = setTimeout(() => {
+        onAnswer?.("completed");
+      }, 1500);
+      return () => clearTimeout(timer);
     }
-  }, [currentProgressIndex, isAnimating]);
+  }, [currentProgressIndex, isAnimating, onAnswer]);
 
   // Continue animation after popup
   const handlePopupAnswer = (answer: string) => {
