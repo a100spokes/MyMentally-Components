@@ -41,6 +41,8 @@ export default function App() {
             <Route path="/ScreenStatsPage" element={<ScreenStatsPage />} />
             <Route path="/ScreenCalc" element={<ScreenCalcPage />} />
             <Route path="/ScreenCalcPage" element={<ScreenCalcPage />} />
+            <Route path="/ScreenEmail" element={<ScreenEmailPage />} />
+            <Route path="/ScreenEmailPage" element={<ScreenEmailPage />} />
             <Route path="/progress" element={<ProgressScreen />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
