@@ -113,10 +113,15 @@ export default function ScreenPaywall({
   );
   const [expandedFAQ, setExpandedFAQ] = useState<string | null>(null);
 
+  // Animated progress state
+  const [animatedProgress, setAnimatedProgress] = useState<Record<string, number>>(
+    progressSection.reduce((acc, section) => ({ ...acc, [section.id]: 0 }), {})
+  );
+
   // Timer countdown effect
   useEffect(() => {
     if (timeLeft <= 0) return;
-    
+
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
@@ -129,6 +134,41 @@ export default function ScreenPaywall({
 
     return () => clearInterval(timer);
   }, [timeLeft]);
+
+  // Progress animation effect
+  useEffect(() => {
+    const animationDuration = 2000; // 2 seconds total
+    const animationSteps = 60; // 60 FPS
+    const stepDelay = animationDuration / animationSteps;
+
+    // Start animation after a short delay
+    const startDelay = setTimeout(() => {
+      let currentStep = 0;
+
+      const animationTimer = setInterval(() => {
+        currentStep++;
+        const progress = Math.min(currentStep / animationSteps, 1);
+
+        setAnimatedProgress(prev => {
+          const newProgress = { ...prev };
+          progressSection.forEach(section => {
+            // Use easeOutCubic for smooth animation
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            newProgress[section.id] = Math.round(section.percProgress * easeProgress);
+          });
+          return newProgress;
+        });
+
+        if (progress >= 1) {
+          clearInterval(animationTimer);
+        }
+      }, stepDelay);
+
+      return () => clearInterval(animationTimer);
+    }, 500); // 500ms delay before starting animation
+
+    return () => clearTimeout(startDelay);
+  }, [progressSection]);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -148,13 +188,13 @@ export default function ScreenPaywall({
     setExpandedFAQ(expandedFAQ === faqId ? null : faqId);
   };
 
-  const renderProgressBar = (progress: number, color: string) => (
+  const renderProgressBar = (progress: number, color: string, sectionId: string) => (
     <div className="h-2.5 bg-gray-200 rounded-full overflow-hidden w-full">
       <div
-        className="h-full rounded-full transition-all duration-300"
+        className="h-full rounded-full transition-all duration-200 ease-out"
         style={{
           backgroundColor: color.startsWith('#') ? color : `#${color}`,
-          width: `${progress}%`,
+          width: `${animatedProgress[sectionId] || 0}%`,
         }}
       />
     </div>
@@ -213,7 +253,7 @@ export default function ScreenPaywall({
             <div key={section.id} className="bg-white rounded-lg p-4 shadow-sm">
               <h3 className="font-bold text-gray-800 mb-2">{section.title}</h3>
               <p className="text-gray-600 text-sm mb-3">{section.progressText}</p>
-              {renderProgressBar(section.percProgress, section.progressColor)}
+              {renderProgressBar(section.percProgress, section.progressColor, section.id)}
             </div>
           ))}
         </div>
