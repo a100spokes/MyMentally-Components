@@ -47,14 +47,9 @@ export default function SquareAnswers({
 
   return (
     <div
-      className="flex flex-col items-center p-6 gap-3"
+      className="flex flex-col items-center p-6 gap-3 h-auto sm:h-screen"
       style={{
         background: "linear-gradient(180deg, #F0F2FF 0%, #E8E8F5 100%)",
-        height: "100vh",
-        "@media (max-width: 640px)": {
-          height: "auto",
-          flexGrow: "0",
-        },
       }}
     >
       <div className="flex flex-col items-center gap-12 w-full max-w-md h-full">
