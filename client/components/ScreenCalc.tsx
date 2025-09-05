@@ -288,14 +288,7 @@ export default function ScreenCalc({
       }}
     >
       <div
-        className="flex flex-col justify-start items-center mx-auto w-full overflow-x-hidden"
-        style={{
-          "@media (max-width: 640px)": {
-            maxWidth: "720px",
-            width: "100%",
-            alignSelf: "center",
-          },
-        }}
+        className="flex flex-col justify-start items-center mx-auto w-full max-w-[720px] overflow-x-hidden"
       >
         <div
           className="flex items-start justify-center p-6 gap-4 w-full overflow-x-hidden"
