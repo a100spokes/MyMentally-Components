@@ -98,7 +98,7 @@ export default function ScreenDifference({
 
   return (
     <div
-      className="min-h-screen flex flex-col justify-center items-center px-4 py-6"
+      className="min-h-[695.2px] sm:min-h-screen flex flex-col justify-center items-center px-4 py-6 rounded-tr-[15px]"
       style={{
         background: "linear-gradient(180deg, #F0F2FF 0%, #E8E8F5 100%)",
       }}
@@ -114,7 +114,7 @@ export default function ScreenDifference({
         </div>
 
         {/* Cards Container */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-0">
           {/* Before Card */}
           <div className="flex flex-col items-center gap-4 p-6 bg-gray-100 rounded-2xl shadow-md w-full sm:w-48 min-h-[400px]">
             {/* Image */}
@@ -151,8 +151,8 @@ export default function ScreenDifference({
           {/* After Card */}
           <div className="flex flex-col items-center gap-4 p-6 bg-white rounded-2xl shadow-lg w-full sm:w-48 min-h-[400px] relative">
             {/* Chip */}
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-100 rounded-2xl px-4 py-1">
-              <span className="text-indigo-600 font-roboto text-xs font-bold">
+            <div className="w-full bg-indigo-100 px-4 py-1 flex justify-center items-center rounded-tl-[15px]">
+              <span className="text-indigo-600 font-roboto text-xs font-bold text-center">
                 {data.chipText}
               </span>
             </div>
