@@ -133,18 +133,21 @@ export default function ScreenDifference({
 
             {/* List Items */}
             <div className="flex flex-col gap-3 w-full">
-              {[beforeTab.text_1, beforeTab.text_2, beforeTab.text_3, beforeTab.text_4].map(
-                (text, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 mt-0.5">
-                      <MinusIcon />
-                    </div>
-                    <span className="text-slate-600 font-roboto text-sm leading-6">
-                      {text}
-                    </span>
+              {[
+                beforeTab.text_1,
+                beforeTab.text_2,
+                beforeTab.text_3,
+                beforeTab.text_4,
+              ].map((text, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <MinusIcon />
                   </div>
-                )
-              )}
+                  <span className="text-slate-600 font-roboto text-sm leading-6">
+                    {text}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -173,18 +176,21 @@ export default function ScreenDifference({
 
             {/* List Items */}
             <div className="flex flex-col gap-3 w-full">
-              {[afterTab.text_1, afterTab.text_2, afterTab.text_3, afterTab.text_4].map(
-                (text, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 mt-0.5">
-                      <CheckIcon />
-                    </div>
-                    <span className="text-slate-800 font-roboto text-sm leading-6">
-                      {text}
-                    </span>
+              {[
+                afterTab.text_1,
+                afterTab.text_2,
+                afterTab.text_3,
+                afterTab.text_4,
+              ].map((text, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <CheckIcon />
                   </div>
-                )
-              )}
+                  <span className="text-slate-800 font-roboto text-sm leading-6">
+                    {text}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

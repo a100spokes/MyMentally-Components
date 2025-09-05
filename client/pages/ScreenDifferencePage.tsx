@@ -11,7 +11,7 @@ export default function ScreenDifferencePage() {
     data: {
       title: "Feel the Difference in Just 7 Days",
       chipText: "WITH MYMENTALLY",
-      onNext: "Continue"
+      onNext: "Continue",
     },
     tabs: [
       {
@@ -20,7 +20,7 @@ export default function ScreenDifferencePage() {
         text_1: "Mood swings that don't make sense",
         text_2: "Stuck in loops of overthinking",
         text_3: "Stress and anxiety feel hard to manage",
-        text_4: "Struggling to build helpful habits"
+        text_4: "Struggling to build helpful habits",
       },
       {
         id: "tab_2",
@@ -28,9 +28,9 @@ export default function ScreenDifferencePage() {
         text_1: "Recognizing what affects your mood",
         text_2: "Thoughts feel easier to navigate",
         text_3: "Have with tools to sooth yourself",
-        text_4: "Follow routines that feel doable"
-      }
-    ]
+        text_4: "Follow routines that feel doable",
+      },
+    ],
   };
 
   const handleAnswer = (answer: string) => {
