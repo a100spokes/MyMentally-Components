@@ -35,8 +35,8 @@ export default function ScreenDifferencePage() {
 
   const handleAnswer = (answer: string) => {
     console.log("ScreenDifference answer:", answer);
-    // Navigate to the next screen (before ScreenPaywall)
-    navigate("/ScreenPaywall");
+    // Navigate to the checkout screen
+    navigate("/ScreenCheckout");
   };
 
   const handleBack = () => {
