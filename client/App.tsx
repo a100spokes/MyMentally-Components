@@ -54,6 +54,8 @@ export default function App() {
               path="/ScreenDifferencePage"
               element={<ScreenDifferencePage />}
             />
+            <Route path="/ScreenCheckout" element={<ScreenCheckoutPage />} />
+            <Route path="/ScreenCheckoutPage" element={<ScreenCheckoutPage />} />
             <Route path="/ScreenPaywall" element={<ScreenPaywallPage />} />
             <Route path="/ScreenPaywallPage" element={<ScreenPaywallPage />} />
             <Route path="/progress" element={<ProgressScreen />} />
