@@ -229,12 +229,9 @@ export default function ScreenCheckout({
             </button>
 
             {/* Footer Text */}
-            <div className="text-center">
+            <div className="text-center mt-8">
               <p className="text-gray-500 text-xs leading-5">
                 {data.subtitle}
-              </p>
-              <p className="text-gray-400 text-xs mt-4">
-                Secure checkout by RevenueCat
               </p>
             </div>
           </div>
