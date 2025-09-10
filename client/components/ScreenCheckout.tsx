@@ -64,7 +64,7 @@ export default function ScreenCheckout({
   };
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex flex-col lg:flex-row">
       {/* Left Side - Subscription Details */}
       <div className="w-full lg:w-1/2 bg-gray-50 p-6 lg:p-12 flex flex-col justify-start">
         <div className="max-w-md">
