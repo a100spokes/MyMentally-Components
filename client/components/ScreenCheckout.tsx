@@ -41,14 +41,15 @@ export default function ScreenCheckout({
     cardNumber: "",
     expirationDate: "",
     securityCode: "",
-    country: "Ukraine"
+    country: "Ukraine",
   });
 
   // Find the selected tariff or default to monthly
-  const currentTariff = data.tariffs.find(t => t.id === selectedTariff) || data.tariffs[1];
+  const currentTariff =
+    data.tariffs.find((t) => t.id === selectedTariff) || data.tariffs[1];
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const handlePayNow = () => {
@@ -111,8 +112,12 @@ export default function ScreenCheckout({
                 {currentTariff.currentPrice}
               </span>
               <span className="text-gray-800 text-sm">
-                per {currentTariff.title.toLowerCase().includes('weekly') ? 'week' : 
-                     currentTariff.title.toLowerCase().includes('monthly') ? 'month' : 'year'}
+                per{" "}
+                {currentTariff.title.toLowerCase().includes("weekly")
+                  ? "week"
+                  : currentTariff.title.toLowerCase().includes("monthly")
+                    ? "month"
+                    : "year"}
               </span>
             </div>
 
@@ -138,7 +143,7 @@ export default function ScreenCheckout({
                 <span>G Pay</span>
                 <span className="text-blue-400">•••• •••• •••• 5579</span>
               </button>
-              
+
               <div className="flex items-center gap-4 my-4">
                 <div className="flex-1 h-px bg-gray-300"></div>
                 <span className="text-gray-500 text-xs uppercase tracking-wide">
@@ -167,7 +172,9 @@ export default function ScreenCheckout({
                   type="text"
                   placeholder="Card number"
                   value={formData.cardNumber}
-                  onChange={(e) => handleInputChange("cardNumber", e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("cardNumber", e.target.value)
+                  }
                   className="w-full h-12 px-4 pr-16 border border-gray-400 rounded text-gray-900 placeholder-gray-500 focus:outline-none focus:border-gray-600"
                 />
                 <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex gap-1">
@@ -182,7 +189,9 @@ export default function ScreenCheckout({
                   type="text"
                   placeholder="Expiration date"
                   value={formData.expirationDate}
-                  onChange={(e) => handleInputChange("expirationDate", e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("expirationDate", e.target.value)
+                  }
                   className="w-full h-12 px-4 border border-gray-400 rounded text-gray-900 placeholder-gray-500 focus:outline-none focus:border-gray-600"
                 />
               </div>
@@ -193,14 +202,16 @@ export default function ScreenCheckout({
                   type="text"
                   placeholder="Security code"
                   value={formData.securityCode}
-                  onChange={(e) => handleInputChange("securityCode", e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("securityCode", e.target.value)
+                  }
                   className="w-full h-12 px-4 pr-12 border border-gray-400 rounded text-gray-900 placeholder-gray-500 focus:outline-none focus:border-gray-600"
                 />
                 <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
                   <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
-                    <rect width="16" height="12" rx="2" fill="#E5E7EB"/>
-                    <rect x="2" y="2" width="12" height="2" fill="#9CA3AF"/>
-                    <rect x="10" y="6" width="4" height="1" fill="#9CA3AF"/>
+                    <rect width="16" height="12" rx="2" fill="#E5E7EB" />
+                    <rect x="2" y="2" width="12" height="2" fill="#9CA3AF" />
+                    <rect x="10" y="6" width="4" height="1" fill="#9CA3AF" />
                   </svg>
                 </div>
               </div>
@@ -230,9 +241,7 @@ export default function ScreenCheckout({
 
             {/* Footer Text */}
             <div className="text-center mt-8">
-              <p className="text-gray-500 text-xs leading-5">
-                {data.subtitle}
-              </p>
+              <p className="text-gray-500 text-xs leading-5">{data.subtitle}</p>
             </div>
           </div>
         </div>

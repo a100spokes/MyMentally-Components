@@ -4,7 +4,7 @@ import ScreenCheckout from "../components/ScreenCheckout";
 export default function ScreenCheckoutPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   // Get selected tariff from navigation state or default to monthly
   const selectedTariff = location.state?.selectedTariff || "tariff_m";
 
@@ -15,7 +15,8 @@ export default function ScreenCheckoutPage() {
     data: {
       title: "Subscribe to",
       onNext: "Pay now",
-      subtitle: "By providing your card information you allow MyMentally to charge your card for future payments in accordance with their terms.",
+      subtitle:
+        "By providing your card information you allow MyMentally to charge your card for future payments in accordance with their terms.",
       tariffs: [
         {
           id: "tariff_w",
@@ -37,9 +38,9 @@ export default function ScreenCheckoutPage() {
           oldPrice: "$79.99",
           currentPrice: "$39.99",
           perDay: "$0.16",
-        }
-      ]
-    }
+        },
+      ],
+    },
   };
 
   const handleAnswer = (answer: string) => {
