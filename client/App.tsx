@@ -16,6 +16,7 @@ import ScreenStatsPage from "./pages/ScreenStatsPage";
 import ScreenCalcPage from "./pages/ScreenCalcPage";
 import ScreenEmailPage from "./pages/ScreenEmailPage";
 import ScreenDifferencePage from "./pages/ScreenDifferencePage";
+import ScreenCheckoutPage from "./pages/ScreenCheckoutPage";
 import ScreenPaywallPage from "./pages/ScreenPaywallPage";
 import ProgressScreen from "./pages/ProgressScreen";
 import NotFound from "./pages/NotFound";
