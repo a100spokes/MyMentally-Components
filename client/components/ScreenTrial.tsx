@@ -1,4 +1,5 @@
 import { useState } from "react";
+import UserCarousel from "./UserCarousel";
 
 interface DescriptionItem {
   text: string;
@@ -111,6 +112,11 @@ export default function ScreenTrial({
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* User Carousel */}
+          <div className="flex justify-center mt-8">
+            <UserCarousel />
           </div>
 
           {/* Text Block with Heart */}
