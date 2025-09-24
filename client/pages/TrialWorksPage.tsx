@@ -13,10 +13,5 @@ export default function TrialWorksPage() {
     navigate("/ScreenTrial");
   };
 
-  return (
-    <TrialWorks
-      onContinue={handleContinue}
-      onBack={handleBack}
-    />
-  );
+  return <TrialWorks onContinue={handleContinue} onBack={handleBack} />;
 }
