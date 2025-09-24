@@ -1,7 +1,3 @@
-import ModalCheckout from "./ModalCheckout";
-
-
-
 interface TrialWorksProps {
   onContinue?: () => void;
   onBack?: () => void;
@@ -22,13 +18,7 @@ export default function TrialWorks({ onContinue, onBack }: TrialWorksProps) {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-6 py-8">
-      <div className="w-full max-w-md bg-white rounded-2xl p-6 space-y-5">
-     
-        <ModalCheckout
-          isOpen={true}
-          onClose={() => { }}
-          onContinue={() => { }}
-        />
+      <div className="w-full max-w-md bg-white rounded-2xl p-6 space-y-5">     
         {/* Title */}
         <div className="text-center">
           <h1 className="text-[#31345D] font-bold text-xl md:text-2xl">
