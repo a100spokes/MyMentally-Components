@@ -138,14 +138,6 @@ export default function TrialWorks({ onContinue, onBack }: TrialWorksProps) {
             </div>
           </div>
         </div>
-
-        {/* Continue Button */}
-        <button
-          onClick={handleContinue}
-          className="w-full mt-6 bg-[#50AEFF] text-white font-bold text-base py-4 rounded-full hover:bg-[#3B9AEF] transition-colors"
-        >
-          Continue
-        </button>
       </div>
     </div>
   );
