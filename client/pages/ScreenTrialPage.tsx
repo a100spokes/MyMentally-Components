@@ -55,8 +55,8 @@ export default function ScreenTrialPage() {
 
   const handleAnswer = (answer: string) => {
     console.log("Trial answer:", answer);
-    // Navigate to the final paywall screen
-    navigate("/ScreenPaywall", { state: { selectedAmount: answer } });
+    // Navigate to TrialWorks before final paywall
+    navigate("/TrialWorks", { state: { selectedAmount: answer } });
   };
 
   const handleBack = () => {
