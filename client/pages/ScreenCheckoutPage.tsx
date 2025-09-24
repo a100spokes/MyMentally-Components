@@ -45,10 +45,9 @@ export default function ScreenCheckoutPage() {
 
   const handleAnswer = (answer: string) => {
     console.log("Checkout answer:", answer);
-    // Navigate to success screen or back to paywall
+    // Navigate to trial screen before final paywall
     if (answer === "payment_completed") {
-      // For now, navigate to paywall as final step - can be updated later
-      navigate("/ScreenPaywall");
+      navigate("/ScreenTrial");
     }
   };
 

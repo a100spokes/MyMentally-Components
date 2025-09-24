@@ -17,6 +17,7 @@ import ScreenCalcPage from "./pages/ScreenCalcPage";
 import ScreenEmailPage from "./pages/ScreenEmailPage";
 import ScreenDifferencePage from "./pages/ScreenDifferencePage";
 import ScreenCheckoutPage from "./pages/ScreenCheckoutPage";
+import ScreenTrialPage from "./pages/ScreenTrialPage";
 import ScreenPaywallPage from "./pages/ScreenPaywallPage";
 import ProgressScreen from "./pages/ProgressScreen";
 import NotFound from "./pages/NotFound";
@@ -59,6 +60,8 @@ export default function App() {
               path="/ScreenCheckoutPage"
               element={<ScreenCheckoutPage />}
             />
+            <Route path="/ScreenTrial" element={<ScreenTrialPage />} />
+            <Route path="/ScreenTrialPage" element={<ScreenTrialPage />} />
             <Route path="/ScreenPaywall" element={<ScreenPaywallPage />} />
             <Route path="/ScreenPaywallPage" element={<ScreenPaywallPage />} />
             <Route path="/progress" element={<ProgressScreen />} />
