@@ -13,43 +13,44 @@ export default function ScreenTrialPage() {
       title: "Unlock everything with a contribution that feels right",
       description: [
         {
-          text: "Full results from your trauma test"
+          text: "Full results from your trauma test",
         },
         {
-          text: "35+ expert-built personality tests"
+          text: "35+ expert-built personality tests",
         },
         {
-          text: "Personalized daily plan for you"
+          text: "Personalized daily plan for you",
         },
         {
-          text: "Calming games to relax your mind"
-        }
+          text: "Calming games to relax your mind",
+        },
       ],
-      textBlock: "We want mental health support to stay accessible for everyone. It costs us $17.34 to provide this trial.\nBut you're free to choose the amount that feels right for you."   
+      textBlock:
+        "We want mental health support to stay accessible for everyone. It costs us $17.34 to provide this trial.\nBut you're free to choose the amount that feels right for you.",
     },
     options: [
       {
         id: "1",
         isDefault: false,
-        title: "1$"
+        title: "1$",
       },
       {
         id: "2",
         isDefault: false,
-        title: "2$"
+        title: "2$",
       },
       {
         id: "10",
         isDefault: true,
-        title: "10$"
+        title: "10$",
       },
       {
         id: "17.34",
         isDefault: false,
         title: "17.34$",
-        subButtonText: "Cost to cover our team's effort"
-      }
-    ]
+        subButtonText: "Cost to cover our team's effort",
+      },
+    ],
   };
 
   const handleAnswer = (answer: string) => {

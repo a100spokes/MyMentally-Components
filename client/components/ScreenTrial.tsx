@@ -39,7 +39,7 @@ export default function ScreenTrial({
 }: ScreenTrialProps) {
   const { data, options } = slideObject;
   const [selectedOption, setSelectedOption] = useState(
-    options.find((option) => option.isDefault)?.id || options[0]?.id
+    options.find((option) => option.isDefault)?.id || options[0]?.id,
   );
 
   const handleOptionSelect = (optionId: string) => {
@@ -62,7 +62,6 @@ export default function ScreenTrial({
     <div className="min-h-screen bg-gradient-to-b from-[#F0F2FF] to-[#E8E8F5] flex flex-col">
       <div className="flex-1 flex flex-col items-center justify-center px-6 py-12">
         <div className="w-full max-w-md mx-auto space-y-8">
-          
           {/* Title */}
           <div className="text-center">
             <h1 className="text-[#31345D] font-bold text-2xl md:text-3xl leading-tight">
